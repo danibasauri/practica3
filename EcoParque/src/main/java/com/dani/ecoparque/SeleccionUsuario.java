@@ -62,7 +62,7 @@ public class SeleccionUsuario extends Activity {
                     TextView textView = (TextView) findViewById(R.id.text_NIF);
                     textView.setVisibility(View.VISIBLE);
 
-                    editTextIdent.setText("");
+                    editTextIdent.setText("12345678");
                     editTextIdent.setHint("NIF");
                     //OCULTAR CIF
                     TextView textView1 = (TextView) findViewById(R.id.text_CIF);
@@ -77,7 +77,7 @@ public class SeleccionUsuario extends Activity {
                     //PONER VISIBLE CIF
                     TextView textView = (TextView) findViewById(R.id.text_CIF);
                     textView.setVisibility(View.VISIBLE);
-                    editTextIdent.setText("");
+                    editTextIdent.setText("a1234567a");
                     editTextIdent.setHint("CIF");
                     //OCULTAR NIF
                     TextView textView1 = (TextView) findViewById(R.id.text_NIF);
@@ -125,6 +125,8 @@ public class SeleccionUsuario extends Activity {
         public void afterTextChanged(Editable s) {
             Validador validador = new Validador();
 
+            botonIniciar.setEnabled(true);
+            /*
             if (editTextIdent.getHint().toString().equalsIgnoreCase("NIF"))
 
             {
@@ -147,7 +149,7 @@ public class SeleccionUsuario extends Activity {
                     botonIniciar.setEnabled(false);
 
                 }
-            }
+            }*/
         }
 
 

@@ -3,10 +3,6 @@
     style="@style/LayoutPrincipal"
     tools:context=".SeleccionUsuario$PlaceholderFragment">
 
-    <TextView
-        style="@style/TituloActivity"
-        android:text="@string/tipo_usuario" />
-
     <ScrollView
         android:layout_width="fill_parent"
         android:layout_height="fill_parent">
@@ -95,7 +91,7 @@
                     android:layout_marginLeft="20dp"
                     android:layout_marginRight="20dp"
                     android:layout_gravity="center"
-                    android:enabled="false" />
+                    android:enabled="true" />
             </LinearLayout>
         </LinearLayout>
     </ScrollView>

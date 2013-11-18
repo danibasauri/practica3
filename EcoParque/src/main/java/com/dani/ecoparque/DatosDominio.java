@@ -1,22 +1,46 @@
 package com.dani.ecoparque;
 
 import android.app.Activity;
-import android.app.ActionBar;
-import android.app.Fragment;
+import android.content.Intent;
+import android.os.AsyncTask;
 import android.os.Bundle;
-import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
-import android.view.ViewGroup;
-import android.os.Build;
+import android.widget.EditText;
+import android.widget.TextView;
+
+import com.dani.objects.UrlInfo;
+import com.fasterxml.jackson.databind.ObjectMapper;
+
+import java.io.IOException;
+import java.net.URL;
 
 public class DatosDominio extends Activity {
+    private EditText urlEmpresa;
+    private TextView ip, pais, localidad, coordenadas;
+    private static final String DEBUG_TAG = "HttpExample";
+    private ObjectMapper mapper = new ObjectMapper();
+    private UrlInfo urlInfo;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.fragment_datos_dominio);
+
+        Intent intent = getIntent();
+        String url = intent.getStringExtra("urlEmpresa");
+
+        urlEmpresa = (EditText) findViewById(R.id.url_empresa);
+        urlEmpresa.setText(url);
+
+        ip = (TextView) findViewById(R.id.ip);
+        pais = (TextView) findViewById(R.id.pais);
+        localidad = (TextView) findViewById(R.id.localidad);
+        coordenadas = (TextView) findViewById(R.id.coordenadas);
+
+
+        new DownloadWebpageTask().execute(urlEmpresa.getText().toString());
 
         if (savedInstanceState == null) {
 
@@ -26,7 +50,7 @@ public class DatosDominio extends Activity {
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        
+
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.datos_dominio, menu);
         return true;
@@ -44,20 +68,31 @@ public class DatosDominio extends Activity {
         return super.onOptionsItemSelected(item);
     }
 
-    /**
-     * A placeholder fragment containing a simple view.
-     */
-    public static class PlaceholderFragment extends Fragment {
+    private class DownloadWebpageTask extends AsyncTask<String, Void, String> {
+        @Override
+        protected String doInBackground(String... urls) {
 
-        public PlaceholderFragment() {
+            // params comes from the execute() call: params[0] is the url.
+            try {
+
+                urlInfo = mapper.readValue(new URL(urlEmpresa.getText().toString()), UrlInfo.class);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+
+            return "preuba";
         }
+
 
         @Override
-        public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                Bundle savedInstanceState) {
-            View rootView = inflater.inflate(R.layout.fragment_datos_dominio, container, false);
-            return rootView;
+        protected void onPostExecute(String result) {
+            ip.setText(urlInfo.getIp());
+            pais.setText(urlInfo.getCountry_name());
+            localidad.setText(urlInfo.getCity());
+            coordenadas.setText(urlInfo.getLatitude());
         }
-    }
 
+    }
 }
+
+

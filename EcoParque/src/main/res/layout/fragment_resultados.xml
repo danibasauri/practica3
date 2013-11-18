@@ -3,10 +3,6 @@
     style="@style/LayoutPrincipal"
     tools:context=".DatosEmpresa$PlaceholderFragment">
 
-    <TextView
-        android:text="@string/resultados"
-        style="@style/TituloActivity" />
-
     <ScrollView
         android:layout_width="fill_parent"
         android:layout_height="fill_parent">

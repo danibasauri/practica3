@@ -3,10 +3,6 @@
     style="@style/LayoutPrincipal"
     tools:context=".DatosEmpresa$PlaceholderFragment">
 
-    <TextView
-        style="@style/TituloActivity"
-        android:text="@string/datos_Empresa" />
-
     <ScrollView
         android:layout_width="fill_parent"
         android:layout_height="fill_parent">
@@ -155,6 +151,7 @@
                 <Button
                     android:id="@+id/btn_siguiente"
                     android:layout_width="fill_parent"
+                    android:layout_marginTop="5dp"
                     android:layout_marginLeft="25dp"
                     android:layout_marginRight="25dp"
                     android:layout_gravity="bottom"
