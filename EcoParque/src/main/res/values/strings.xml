@@ -52,17 +52,14 @@
     <!-- Strings related to login -->
     <string name="ciudadano">Ciudadano</string>
     <string name="contraseña">Contraseña</string>
-
     <string name="action_sign_in_register"><b>Sign in</b> or register</string>
     <string name="action_sign_in_short">Sign in</string>
-
     <string name="action_forgot_password">¿Contraseña perdida?</string>
-
-    <string name="login_progress_signing_in">Comprobando...&#8230;</string>
-
+    <string name="login_progress_signing_in">Comprobando...…</string>
     <string name="error_invalid_email">El formato introducido es incorrecto</string>
     <string name="error_invalid_password">Contraseña demasiado corta</string>
     <string name="error_incorrect_password">Usuario o contraseña incorrectos</string>
     <string name="error_field_required">Campo requerido</string>
+    <string name="title_activity_datos_dominio">DatosDominio</string>
 
 </resources>
