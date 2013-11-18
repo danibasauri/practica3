@@ -2,8 +2,7 @@
 <resources>
 
     <!-- Base application theme. -->
-    <style name="AppTheme" parent="android:Theme.Holo.Light.NoActionBar">
-    </style>
+    <style name="AppTheme" parent="android:Theme.Holo.Light.NoActionBar"></style>
 
     <style name="LoginFormContainer">
         <item name="android:layout_width">match_parent</item>

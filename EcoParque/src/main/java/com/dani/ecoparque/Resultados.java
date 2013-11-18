@@ -65,10 +65,9 @@ public class Resultados extends Activity {
             cont++;
         }
 
-        if (cont == 1){
+        if (cont == 1) {
             cantResiduos.setText("1 residuo depositado:");
-        }
-        else{
+        } else {
             cantResiduos.setText(cont + " residuos depositados:");
         }
 
