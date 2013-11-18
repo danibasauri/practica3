@@ -16,7 +16,7 @@ import com.dani.utils.Validador;
 
 public class DatosEmpresa extends Activity {
     private EditText nif, tlf, mail, url, nombre;
-    private Button btnTlf, btnMail, btnUrl, btnSiguiente;
+    private Button btnTlf, btnMail, btnUrl, btnSiguiente, btnInfoDom;
     private Validador validador = new Validador();
 
 
@@ -45,6 +45,7 @@ public class DatosEmpresa extends Activity {
         btnUrl = (Button) findViewById(R.id.btn_abrir);
 
         btnSiguiente = (Button) findViewById(R.id.btn_siguiente);
+        btnInfoDom = (Button) findViewById(R.id.btn_info_dominio);
 
         tlf.addTextChangedListener(mTextEditorWatcher);
         mail.addTextChangedListener(mTextEditorWatcher);
@@ -86,6 +87,16 @@ public class DatosEmpresa extends Activity {
             }
         });
 
+        btnInfoDom.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(DatosEmpresa.this, DatosDominio.class);
+
+                intent.putExtra("urlEmpresa", url.getText().toString());
+                intent.putExtra("from", "empresa");
+                startActivity(intent);
+            }
+        });
 
         btnSiguiente.setOnClickListener(new View.OnClickListener() {
             @Override

@@ -142,14 +142,23 @@
                 android:layout_weight="1">
 
                 <Button
+                    android:id="@+id/btn_info_dominio"
+                    android:layout_width="fill_parent"
+                    android:layout_marginLeft="25dp"
+                    android:layout_marginRight="25dp"
+                    android:layout_gravity="bottom"
+                    android:layout_height="fill_parent"
+                    android:enabled="false"
+                    android:onClick="validar"
+                    android:text="@string/info_dominio" />
+
+                <Button
                     android:id="@+id/btn_siguiente"
                     android:layout_width="fill_parent"
                     android:layout_marginLeft="25dp"
                     android:layout_marginRight="25dp"
                     android:layout_gravity="bottom"
                     android:layout_height="fill_parent"
-
-
                     android:enabled="false"
                     android:onClick="validar"
                     android:text="@string/siguiente" />
