@@ -1,0 +1,156 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    style="@style/LayoutPrincipal"
+    tools:context=".DatosEmpresa$PlaceholderFragment">
+
+    <TextView
+        style="@style/TituloActivity"
+        android:text="@string/depositante" />
+
+    <ScrollView
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent">
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginTop="18dp">
+
+        <EditText
+            android:id="@+id/dep_ident"
+            android:singleLine="true"
+            android:textSize="@dimen/contenido"
+            android:maxLines="1"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:editable="false" />
+
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="fill_parent"
+            android:layout_marginTop="20dp"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:layout_gravity="center"
+                android:layout_width="41dp"
+                android:layout_height="40dp"
+                android:src="@drawable/ordenadores" />
+
+
+            <CheckBox
+                android:id="@+id/dep_chk_matInf"
+                android:textSize="@dimen/contenido"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/mat_informatico" />
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="fill_parent"
+            android:layout_marginTop="20dp"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:layout_gravity="center"
+                android:layout_width="41dp"
+                android:layout_height="40dp"
+                android:src="@drawable/neveras" />
+
+
+            <CheckBox
+                android:id="@+id/dep_chk_nev"
+                android:textSize="@dimen/contenido"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/neveras" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="fill_parent"
+            android:layout_marginTop="20dp"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:layout_gravity="center"
+                android:layout_width="41dp"
+                android:layout_height="40dp"
+                android:src="@drawable/aceites" />
+
+
+            <CheckBox
+                android:id="@+id/dep_chk_aceites"
+                android:textSize="@dimen/contenido"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/aceites" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="fill_parent"
+            android:layout_marginTop="20dp"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:text="@string/peso_total"
+                android:textSize="@dimen/tit_secundario"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+
+            <EditText
+                android:paddingTop="30dp"
+                android:id="@+id/text_peso"
+                android:singleLine="true"
+                android:maxLength="5"
+                android:maxLines="1"
+                android:textSize="@dimen/tit_secundario"
+                android:layout_width="80dp"
+                android:layout_height="wrap_content"
+                android:inputType="number"
+                android:enabled="false" />
+
+            <TextView
+                android:text="@string/kg"
+                android:textSize="@dimen/tit_secundario"
+
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+    <LinearLayout style="@style/LayoutInferiorBotones"
+        android:orientation="vertical">
+
+        <Button
+            android:id="@+id/depositar"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:layout_marginLeft="25dp"
+            android:layout_marginRight="25dp"
+            android:layout_gravity="center"
+            android:text="@string/depositar"
+            android:enabled="false" />
+    </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

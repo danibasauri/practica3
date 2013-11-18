@@ -1,0 +1,159 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    style="@style/LayoutPrincipal"
+    tools:context=".DatosEmpresa$PlaceholderFragment">
+
+    <TextView
+        style="@style/TituloActivity"
+        android:text="@string/datos_Empresa" />
+
+    <ScrollView
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent">
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginTop="18dp">
+
+                <EditText
+                    android:id="@+id/empr_cif"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/contenido"
+                    android:maxLines="1"
+                    android:editable="false"
+                    android:singleLine="true" />
+
+                <EditText
+                    android:id="@+id/empr_nombre"
+                    android:layout_width="fill_parent"
+                    android:textSize="@dimen/contenido"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/nombre_Empresa"
+                    android:inputType="text"
+                    android:maxLines="1"
+                    android:paddingTop="30dp"
+                    android:singleLine="true" />
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:orientation="horizontal">
+
+                    <EditText
+                        android:id="@+id/empr_tlf"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="@dimen/contenido"
+                        android:maxLength="14"
+                        android:layout_marginRight="10dp"
+                        android:layout_weight="1"
+                        android:hint="@string/ejemplo_telf"
+                        android:inputType="number"
+                        android:maxLines="1"
+                        android:singleLine="true" />
+
+
+                    <Button
+                        android:id="@+id/btn_llamar"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:width="100dp"
+                        android:enabled="false"
+                        android:onClick="validar"
+                        android:text="@string/Llamar" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:orientation="horizontal">
+
+                    <EditText
+                        android:id="@+id/empr_mail"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="10dp"
+                        android:textSize="@dimen/contenido"
+                        android:layout_weight="1"
+                        android:hint="@string/ejemplo_email"
+                        android:inputType="textEmailAddress"
+                        android:maxLines="1"
+                        android:singleLine="true" />
+
+
+                    <Button
+                        android:id="@+id/btn_enviar"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:width="100dp"
+                        android:enabled="false"
+                        android:onClick="validar"
+                        android:text="@string/Enviar" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:orientation="horizontal">
+
+                    <EditText
+                        android:id="@+id/empr_url"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="10dp"
+                        android:textSize="@dimen/contenido"
+                        android:layout_weight="1"
+                        android:hint="@string/ejemplo_url"
+                        android:inputType="textUri"
+                        android:maxLines="1"
+                        android:singleLine="true" />
+
+
+                    <Button
+                        android:id="@+id/btn_abrir"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:width="100dp"
+                        android:enabled="false"
+                        android:onClick="validar"
+                        android:text="@string/Abrir" />
+
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                style="@style/LayoutInferiorBotones"
+                android:orientation="vertical"
+                android:layout_weight="1">
+
+                <Button
+                    android:id="@+id/btn_siguiente"
+                    android:layout_width="fill_parent"
+                    android:layout_marginLeft="25dp"
+                    android:layout_marginRight="25dp"
+                    android:layout_gravity="bottom"
+                    android:layout_height="fill_parent"
+
+
+                    android:enabled="false"
+                    android:onClick="validar"
+                    android:text="@string/siguiente" />
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>
