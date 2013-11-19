@@ -4,6 +4,7 @@ import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
 import android.annotation.TargetApi;
 import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.AsyncTask;
@@ -61,7 +62,7 @@ public class LoginActivity extends Activity {
 
 
         // Restore preferences
-        SharedPreferences settings = getSharedPreferences(NOMBRE_PREFERENCIAS, MODE_PRIVATE);
+        SharedPreferences settings = getSharedPreferences(NOMBRE_PREFERENCIAS, Context.MODE_PRIVATE);
         unm = settings.getString("Unm", "");
         mEmailView.setText(unm);
 
