@@ -1,6 +1,7 @@
 package com.dani.ecoparque;
 
 import android.app.Activity;
+import android.app.DialogFragment;
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.AsyncTask;
@@ -77,6 +78,8 @@ public class DatosDominio extends Activity {
         // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
         if (id == R.id.action_settings) {
+            DialogFragment newFragment = new DesconectarFragment();
+            newFragment.show(getFragmentManager(), "dialogo");
             return true;
         }
         return super.onOptionsItemSelected(item);
@@ -120,7 +123,7 @@ public class DatosDominio extends Activity {
             try {
                 pDialog.dismiss();
                 ip.setText(ip.getText().toString() + urlInfo.getIp());
-                pais.setText(pais.getText().toString() + urlInfo.getCountry_name()+"("+urlInfo.getCountry_code()+")");
+                pais.setText(pais.getText().toString() + urlInfo.getCountry_name() + "(" + urlInfo.getCountry_code() + ")");
                 localidad.setText(localidad.getText().toString() + urlInfo.getCity());
                 coordenadas.setText(coordenadas.getText().toString() + urlInfo.getLatitude() + ", " + urlInfo.getLongitude());
             } catch (NullPointerException e) {

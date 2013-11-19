@@ -2,7 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.dani.ecoparque"
     android:versionCode="1"
-    android:versionName="1.0" >
+    android:versionName="1.0">
 
     <uses-sdk
         android:minSdkVersion="14"
@@ -19,12 +19,12 @@
         android:allowBackup="true"
         android:icon="@drawable/ic_launcher"
         android:label="@string/app_name"
-        android:theme="@style/AppTheme" >
+        android:theme="@style/AppTheme">
         <activity
             android:name="com.dani.ecoparque.LoginActivity"
             android:label="@string/title_activity_login"
             android:noHistory="true"
-            android:windowSoftInputMode="adjustResize|stateVisible" >
+            android:windowSoftInputMode="adjustResize|stateVisible">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -33,12 +33,11 @@
         </activity>
         <activity
             android:name="com.dani.ecoparque.SeleccionUsuario"
-            android:label="@string/title_activity_seleccion_usuario" >
-        </activity>
+            android:label="@string/title_activity_seleccion_usuario"></activity>
         <activity
             android:name="com.dani.ecoparque.DatosEmpresa"
             android:label="@string/title_activity_datos_empresa"
-            android:parentActivityName="com.dani.ecoparque.SeleccionUsuario" >
+            android:parentActivityName="com.dani.ecoparque.SeleccionUsuario">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.dani.ecoparque.SeleccionUsuario" />
@@ -46,7 +45,7 @@
         <activity
             android:name="com.dani.ecoparque.Depositante"
             android:label="@string/title_activity_depositante"
-            android:parentActivityName="com.dani.ecoparque.SeleccionUsuario" >
+            android:parentActivityName="com.dani.ecoparque.SeleccionUsuario">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.dani.ecoparque.SeleccionUsuario" />
@@ -54,7 +53,7 @@
         <activity
             android:name="com.dani.ecoparque.Resultados"
             android:label="@string/title_activity_resultados"
-            android:parentActivityName="com.dani.ecoparque.Depositante" >
+            android:parentActivityName="com.dani.ecoparque.Depositante">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.dani.ecoparque.Depositante" />
@@ -62,7 +61,7 @@
         <activity
             android:name="com.dani.ecoparque.DatosDominio"
             android:label="@string/title_activity_datos_dominio"
-            android:parentActivityName="com.dani.ecoparque.DatosEmpresa" >
+            android:parentActivityName="com.dani.ecoparque.DatosEmpresa">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.dani.ecoparque.DatosEmpresa" />
@@ -70,7 +69,7 @@
         <activity
             android:name="com.dani.ecoparque.SeleccionPuntoLimpio"
             android:label="@string/title_activity_seleccion_punto_limpio"
-            android:parentActivityName="com.dani.ecoparque.LoginActivity" >
+            android:parentActivityName="com.dani.ecoparque.LoginActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.dani.ecoparque.LoginActivity" />

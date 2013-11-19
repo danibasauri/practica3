@@ -1,13 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string-array name="areas_empresa">
-        <item>Mercury</item>
-        <item>Venus</item>
-        <item>Earth</item>
-        <item>Mars</item>
-        <item>Jupiter</item>
-        <item>Saturn</item>
-        <item>Uranus</item>
-        <item>Neptune</item>
+        <item>Administración</item>
+        <item>Gestión</item>
+        <item>Artes gráficas</item>
+        <item>Comercio y Marketing</item>
+        <item>Edificación y obra civil</item>
+        <item>Electricidad</item>
+        <item>Electrónica</item>
+        <item>Hostelería</item>
+        <item>Turismo</item>
+        <item>Informática</item>
+        <item>Imagen</item>
+        <item>Sonido</item>
+        <item>Imagen personal</item>
+        <item>Industrias alimentarias</item>
+        <item>Madera</item>
+        <item>Marítimo pesquera</item>
     </string-array>
 </resources>
