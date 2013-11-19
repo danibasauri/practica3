@@ -1,8 +1,9 @@
 package com.dani.ecoparque;
 
-import android.app.Activity;
+import android.app.DialogFragment;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.v4.app.FragmentActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -13,12 +14,14 @@ import android.widget.Toast;
 
 import java.math.BigDecimal;
 import java.math.RoundingMode;
+import java.util.Calendar;
 
-public class Resultados extends Activity {
+public class Resultados extends FragmentActivity {
     private LinearLayout coste;
-    private Button enviarMail, registroNuevo;
-    private TextView ident, matInf, aceites, neveras, cantResiduos, txtCalculo, txtPrecio, txtIVA, txtTotal, iva, total;
+    private Button enviarMail, registroNuevo, editarFecha;
+    private TextView ident, matInf, aceites, neveras, cantResiduos, txtCalculo, txtPrecio, txtIVA, txtTotal, iva, total, fecha;
     private String contenidoMensaje;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,6 +43,13 @@ public class Resultados extends Activity {
         neveras = (TextView) findViewById(R.id.neveras);
         aceites = (TextView) findViewById(R.id.aceites);
         cantResiduos = (TextView) findViewById(R.id.cant_residuos);
+
+        final Calendar c = Calendar.getInstance();
+        int year = c.get(Calendar.YEAR);
+        int month = c.get(Calendar.MONTH);
+        int day = c.get(Calendar.DAY_OF_MONTH);
+        fecha = (TextView) findViewById(R.id.fecha);
+        fecha.setText(String.valueOf(day) + "/" + String.valueOf(month + 1) + "/" + String.valueOf(year));
 
         contenidoMensaje = "Depositante:" + "\t" + ident.getText().toString() + "\n";
         contenidoMensaje += "Residuos depositados: \n";
@@ -115,11 +125,26 @@ public class Resultados extends Activity {
         registroNuevo.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(Resultados.this, SeleccionUsuario.class);
+                Intent intent = new Intent(Resultados.this, SeleccionPuntoLimpio.class);
                 intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                 intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
                 startActivity(intent);
+                finish();
                 Toast.makeText(getApplicationContext(), "Depósito registrado con éxito!", 1000).show();
+            }
+        });
+
+        editarFecha = (Button) findViewById(R.id.editar_fecha);
+
+
+        editarFecha.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                DialogFragment newFragment = new DatePickerFragment();
+                newFragment.show(getFragmentManager(), "datePicker");
+
+
             }
         });
     }
@@ -140,6 +165,8 @@ public class Resultados extends Activity {
         // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
         if (id == R.id.action_settings) {
+            DialogFragment newFragment = new DesconectarFragment();
+            newFragment.show(getFragmentManager(), "dialogo");
             return true;
         }
         return super.onOptionsItemSelected(item);

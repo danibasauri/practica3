@@ -15,8 +15,33 @@
             <LinearLayout
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="18dp"
                 android:orientation="vertical">
+
+                <LinearLayout
+                    android:id="@+id/layout_coste"
+                    android:orientation="vertical"
+                    android:layout_width="fill_parent"
+                    android:textSize="19dp"
+                    android:layout_height="wrap_content"
+                    android:visibility="visible">
+
+                    <TextView
+
+                        android:text="@string/txt_deposito"
+                        android:textStyle="bold"
+                        android:textSize="@dimen/tit_secundario"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+
+                    <TextView
+                        android:id="@+id/deposito_punto_limpio"
+                        android:text="@string/txt_deposito"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginLeft="15dp"
+                        android:textSize="@dimen/tit_secundario"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+                </LinearLayout>
 
                 <LinearLayout
                     android:orientation="vertical"
@@ -26,6 +51,7 @@
 
                     <TextView
                         android:textStyle="bold"
+                        android:layout_marginTop="18dp"
                         android:text="@string/depositante"
                         android:textSize="@dimen/tit_secundario"
                         android:layout_width="wrap_content"
@@ -97,7 +123,7 @@
                     android:layout_marginTop="18dp"
                     android:textSize="19dp"
                     android:layout_height="wrap_content"
-                    android:visibility="gone">
+                    android:visibility="visible">
 
                     <TextView
                         android:id="@+id/txt_coste"
@@ -204,6 +230,45 @@
 
                     </LinearLayout>
 
+                    <LinearLayout
+                        android:orientation="horizontal"
+                        android:layout_width="fill_parent"
+                        android:layout_marginTop="15dp"
+                        android:layout_height="fill_parent"
+                        android:gravity="center_horizontal"
+                        android:visibility="visible">
+
+                        <LinearLayout
+                            android:orientation="vertical"
+                            android:layout_width="wrap_content"
+                            android:layout_weight="0.7"
+                            android:layout_height="wrap_content"
+
+                            android:visibility="visible">
+
+                            <TextView
+                                android:text="@string/fecha_cobro"
+                                android:textSize="19dp"
+                                android:layout_width="fill_parent"
+                                android:layout_height="wrap_content" />
+
+                            <TextView
+                                android:id="@+id/fecha"
+                                android:layout_weight="0.7"
+                                android:textSize="19dp"
+                                android:layout_width="fill_parent"
+                                android:layout_height="wrap_content" />
+                        </LinearLayout>
+
+                        <Button
+                            android:id="@+id/editar_fecha"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="0.3"
+                            android:layout_gravity="bottom"
+                            android:text="@string/editar"
+                            android:enabled="true" />
+                    </LinearLayout>
 
                 </LinearLayout>
 
@@ -220,7 +285,6 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="0.5"
-
                     android:layout_gravity="bottom"
                     android:layout_marginTop="10dp"
                     android:text="@string/enviar_mail"
@@ -231,7 +295,6 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="0.5"
-
                     android:layout_gravity="bottom"
                     android:layout_marginTop="10dp"
                     android:text="@string/registrar_deposito"

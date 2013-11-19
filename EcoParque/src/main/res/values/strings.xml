@@ -69,5 +69,12 @@
     <string name="info_dominio">Ver información dominio</string>
     <string name="title_activity_seleccion_punto_limpio">SeleccionPuntoLimpio</string>
     <string name="desconectar">Desconectar</string>
+    <string name="fecha_cobro">Fecha de cobro:</string>
+    <string name="editar">Editar</string>
+    <string name="txt_deposito">Depósito en Punto Limpio</string>
+    <string name="cancelar">Cancelar</string>
+    <string name="confirmacion">¿Estás seguro?</string>
+    <string name="si">Sí</string>
+    <string name="no">No</string>
 
 </resources>

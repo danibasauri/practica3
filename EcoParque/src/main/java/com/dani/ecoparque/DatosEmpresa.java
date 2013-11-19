@@ -1,6 +1,7 @@
 package com.dani.ecoparque;
 
 import android.app.Activity;
+import android.app.DialogFragment;
 import android.content.Context;
 import android.content.Intent;
 import android.net.ConnectivityManager;
@@ -168,6 +169,8 @@ public class DatosEmpresa extends Activity implements AdapterView.OnItemSelected
         // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
         if (id == R.id.action_settings) {
+            DialogFragment newFragment = new DesconectarFragment();
+            newFragment.show(getFragmentManager(), "dialogo");
             return true;
         }
         return super.onOptionsItemSelected(item);

@@ -15,8 +15,7 @@
             <LinearLayout
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:layout_marginTop="18dp">
+                android:orientation="vertical">
 
                 <Spinner
                     android:id="@+id/areas_empresa"
@@ -26,6 +25,7 @@
                 <EditText
                     android:id="@+id/empr_cif"
                     android:layout_width="fill_parent"
+                    android:layout_marginTop="20dp"
                     android:layout_height="wrap_content"
                     android:textSize="@dimen/contenido"
                     android:maxLines="1"
