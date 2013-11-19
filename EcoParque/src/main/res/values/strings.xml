@@ -62,10 +62,10 @@
     <string name="error_field_required">Campo requerido</string>
     <string name="title_activity_datos_dominio">DatosDominio</string>
     <string name="titulo_datos">Datos dominio de la empresa</string>
-    <string name="coordenadas">Coordenadas:</string>
-    <string name="localidad">Localidad:</string>
-    <string name="pais">País:</string>
-    <string name="ip">IP:</string>
+    <string name="coordenadas">Coordenadas: </string>
+    <string name="localidad">Localidad: </string>
+    <string name="pais">País: </string>
+    <string name="ip">Dirección IP: </string>
     <string name="info_dominio">Ver información dominio</string>
 
 </resources>

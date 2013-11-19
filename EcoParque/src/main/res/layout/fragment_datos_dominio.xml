@@ -5,6 +5,7 @@
 
     <TextView
         android:text="@string/titulo_datos"
+        android:textSize="@dimen/contenido"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
 
@@ -20,6 +21,7 @@
 
     <TextView
         android:id="@+id/ip"
+        android:textSize="@dimen/contenido"
         android:text="@string/ip"
         android:layout_marginTop="10dp"
         android:layout_width="wrap_content"
@@ -27,6 +29,7 @@
 
     <TextView
         android:id="@+id/pais"
+        android:textSize="@dimen/contenido"
         android:text="@string/pais"
         android:layout_marginTop="10dp"
         android:layout_width="wrap_content"
@@ -34,6 +37,7 @@
 
     <TextView
         android:id="@+id/localidad"
+        android:textSize="@dimen/contenido"
         android:text="@string/localidad"
         android:layout_marginTop="10dp"
         android:layout_width="wrap_content"
@@ -41,6 +45,7 @@
 
     <TextView
         android:id="@+id/coordenadas"
+        android:textSize="@dimen/contenido"
         android:text="@string/coordenadas"
         android:layout_marginTop="10dp"
         android:layout_width="wrap_content"

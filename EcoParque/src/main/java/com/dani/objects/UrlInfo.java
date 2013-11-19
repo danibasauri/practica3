@@ -1,8 +1,11 @@
 package com.dani.objects;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 /**
  * Created by dcandelas on 18/11/13.
  */
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class UrlInfo {
 
     private String ip;

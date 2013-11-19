@@ -100,7 +100,6 @@ public class DatosEmpresa extends Activity {
                 NetworkInfo networkInfo = connMgr.getActiveNetworkInfo();
                 if (networkInfo != null && networkInfo.isConnected()) {
                     Intent intent = new Intent(DatosEmpresa.this, DatosDominio.class);
-                    url.setText("http://freegeoip.net/json/" + url.getText().toString());
                     intent.putExtra("urlEmpresa", url.getText().toString());
                     startActivity(intent);
                 } else {
