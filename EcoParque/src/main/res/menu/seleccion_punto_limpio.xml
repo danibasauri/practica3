@@ -1,9 +1,8 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    tools:context=".Depositante">
-
-    <item
-        android:id="@+id/action_settings"
+    tools:context=".SeleccionPuntoLimpio" >
+    
+    <item android:id="@+id/action_settings"
         android:title="@string/desconectar"
         android:orderInCategory="100"
         android:showAsAction="never" />

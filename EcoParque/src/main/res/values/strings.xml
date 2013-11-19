@@ -67,5 +67,7 @@
     <string name="pais">País: </string>
     <string name="ip">Dirección IP: </string>
     <string name="info_dominio">Ver información dominio</string>
+    <string name="title_activity_seleccion_punto_limpio">SeleccionPuntoLimpio</string>
+    <string name="desconectar">Desconectar</string>
 
 </resources>

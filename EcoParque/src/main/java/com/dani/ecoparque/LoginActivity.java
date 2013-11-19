@@ -24,14 +24,9 @@ import android.widget.Toast;
  * well.
  */
 public class LoginActivity extends Activity {
-    /**
-     * A dummy authentication store containing known user names and passwords.
-     * TODO: remove after connecting to a real authentication system.
-     */
+
     private static final String[] DUMMY_CREDENTIALS = new String[]{
             "m@m:mmmm",
-            "bar@example.com:world"
-
     };
 
     /**
@@ -233,7 +228,7 @@ public class LoginActivity extends Activity {
             showProgress(false);
 
             if (success) {
-                Intent intent = new Intent(LoginActivity.this, SeleccionUsuario.class);
+                Intent intent = new Intent(LoginActivity.this, SeleccionPuntoLimpio.class);
                 startActivity(intent);
                 Toast.makeText(getApplicationContext(), "Éxito!", 500).show();
             } else {

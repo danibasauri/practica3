@@ -67,6 +67,14 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.dani.ecoparque.DatosEmpresa" />
         </activity>
+        <activity
+            android:name="com.dani.ecoparque.SeleccionPuntoLimpio"
+            android:label="@string/title_activity_seleccion_punto_limpio"
+            android:parentActivityName="com.dani.ecoparque.LoginActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.dani.ecoparque.LoginActivity" />
+        </activity>
     </application>
 
 </manifest>
