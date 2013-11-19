@@ -5,6 +5,7 @@ import android.animation.AnimatorListenerAdapter;
 import android.annotation.TargetApi;
 import android.app.Activity;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.AsyncTask;
 import android.os.Build;
 import android.os.Bundle;
@@ -25,9 +26,11 @@ import android.widget.Toast;
  */
 public class LoginActivity extends Activity {
 
-    private static final String[] DUMMY_CREDENTIALS = new String[]{
-            "m@m:mmmm",
-    };
+    public static final String NOMBRE_PREFERENCIAS = "MisPrefs";
+    private static final String[] DUMMY_CREDENTIALS = new String[]
+            {
+                    "m@m:mmmm",
+            };
 
     /**
      * The default email to populate the email field with.
@@ -50,10 +53,18 @@ public class LoginActivity extends Activity {
     private View mLoginFormView;
     private View mLoginStatusView;
     private TextView mLoginStatusMessageView;
+    private String unm;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+
+        // Restore preferences
+        SharedPreferences settings = getSharedPreferences(NOMBRE_PREFERENCIAS, MODE_PRIVATE);
+        unm = settings.getString("Unm", "");
+        mEmailView.setText(unm);
+
 
         setContentView(R.layout.activity_login);
 
@@ -268,4 +279,17 @@ public class LoginActivity extends Activity {
 
 
     };
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+        // We need an Editor object to make preference changes.
+        // All objects are from android.context.Context
+        SharedPreferences settings = getSharedPreferences(NOMBRE_PREFERENCIAS, MODE_PRIVATE);
+        SharedPreferences.Editor editor = settings.edit();
+        editor.putString("Unm", mEmailView.getText().toString());
+        // Commit the edits!
+        editor.commit();
+    }
+
 }
