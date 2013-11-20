@@ -20,7 +20,7 @@ import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.Toast;
 
-import com.dani.utils.Validador;
+import com.dani.objects.Validador;
 
 public class DatosEmpresa extends Activity implements AdapterView.OnItemSelectedListener {
     private EditText nif, tlf, mail, url, nombre;

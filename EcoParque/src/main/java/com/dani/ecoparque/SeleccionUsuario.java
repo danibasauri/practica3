@@ -14,7 +14,7 @@ import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.TextView;
 
-import com.dani.utils.Validador;
+import com.dani.objects.Validador;
 
 public class SeleccionUsuario extends Activity {
     //protected EditText editTextEmail = (EditText) findViewById(R.id.email);

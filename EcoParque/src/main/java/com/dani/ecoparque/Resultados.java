@@ -19,14 +19,14 @@ import java.util.Calendar;
 public class Resultados extends FragmentActivity {
     private LinearLayout coste;
     private Button enviarMail, registroNuevo, editarFecha;
-    private TextView ident, matInf, aceites, neveras, cantResiduos, txtCalculo, txtPrecio, txtIVA, txtTotal, iva, total, fecha;
+    private TextView ident, matInf, aceites, neveras, cantResiduos, txtCalculo, txtPrecio, txtIVA, txtTotal, iva, total, fecha, puntoLimpio;
     private String contenidoMensaje;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
+        final Constantes appState = ((Constantes)this.getApplication());
         setContentView(R.layout.fragment_resultados);
         Intent intent = getIntent();
         String activity = intent.getStringExtra("from");
@@ -43,6 +43,9 @@ public class Resultados extends FragmentActivity {
         neveras = (TextView) findViewById(R.id.neveras);
         aceites = (TextView) findViewById(R.id.aceites);
         cantResiduos = (TextView) findViewById(R.id.cant_residuos);
+
+        puntoLimpio = (TextView) findViewById(R.id.deposito_punto_limpio);
+        puntoLimpio.setText(appState.getPuntoLimpio());
 
         final Calendar c = Calendar.getInstance();
         int year = c.get(Calendar.YEAR);

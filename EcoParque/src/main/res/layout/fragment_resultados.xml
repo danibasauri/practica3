@@ -35,7 +35,6 @@
 
                     <TextView
                         android:id="@+id/deposito_punto_limpio"
-                        android:text="@string/txt_deposito"
                         android:layout_marginTop="10dp"
                         android:layout_marginLeft="15dp"
                         android:textSize="@dimen/tit_secundario"
