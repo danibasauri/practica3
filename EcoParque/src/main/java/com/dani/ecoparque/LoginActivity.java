@@ -61,10 +61,7 @@ public class LoginActivity extends Activity {
         super.onCreate(savedInstanceState);
 
 
-        // Restore preferences
-        SharedPreferences settings = getSharedPreferences(NOMBRE_PREFERENCIAS, Context.MODE_PRIVATE);
-        unm = settings.getString("Unm", "");
-        mEmailView.setText(unm);
+
 
 
         setContentView(R.layout.activity_login);
@@ -73,6 +70,11 @@ public class LoginActivity extends Activity {
         mEmail = getIntent().getStringExtra(EXTRA_EMAIL);
         mEmailView = (EditText) findViewById(R.id.email);
         mEmailView.setText(mEmail);
+
+        // Restore preferences
+        SharedPreferences settings = getSharedPreferences(NOMBRE_PREFERENCIAS, Context.MODE_PRIVATE);
+        unm = settings.getString("Unm", "");
+        mEmailView.setText(unm);
 
         mPasswordView = (EditText) findViewById(R.id.password);
         mPasswordView.setOnEditorActionListener(new TextView.OnEditorActionListener() {
