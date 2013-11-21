@@ -19,24 +19,6 @@ public class Constantes extends Application {
 
     private static String puntoLimpio;
 
-
-    public static final String[] IMAGES = new String[]{
-            "http://tabletpcssource.com/wp-content/uploads/2011/05/android-logo.png",
-            "http://simpozia.com/pages/images/stories/windows-icon.png",
-            "https://si0.twimg.com/profile_images/1135218951/gmail_profile_icon3_normal.png",
-            "http://www.krify.net/wp-content/uploads/2011/09/Macromedia_Flash_dock_icon.png",
-            "http://radiotray.sourceforge.net/radio.png",
-            "http://www.bandwidthblog.com/wp-content/uploads/2011/11/twitter-logo.png",
-            "http://weloveicons.s3.amazonaws.com/icons/100907_itunes1.png",
-            "http://weloveicons.s3.amazonaws.com/icons/100929_applications.png",
-            "http://www.idyllicmusic.com/index_files/get_apple-iphone.png",
-            "http://www.frenchrevolutionfood.com/wp-content/uploads/2009/04/Twitter-Bird.png",
-            "http://3.bp.blogspot.com/-ka5MiRGJ_S4/TdD9OoF6bmI/AAAAAAAAE8k/7ydKtptUtSg/s1600/Google_Sky%2BMaps_Android.png",
-            "http://www.desiredsoft.com/images/icon_webhosting.png",
-            "http://goodereader.com/apps/wp-content/uploads/downloads/thumbnails/2012/01/hi-256-0-99dda8c730196ab93c67f0659d5b8489abdeb977.png",
-    };
-
-
     public ArrayList getListData() {
         ArrayList results = new ArrayList();
         Item elementData = new Item("Sercomosa", "http://www.sercomosa.es/images/serv_ecoparque1.jpg");
@@ -47,7 +29,7 @@ public class Constantes extends Application {
         results.add(elementData);
 
 
-        elementData = new Item("Cartagena Sur", "http://www.cartagenaactualidad.com/wp-content/uploads/2013/04/activites.jpg");
+        elementData = new Item("Cartagena Sur", "https://gp3.googleusercontent.com/-y9ZsmNL_vJU/AAAAAAAAAAI/AAAAAAAAAAA/PwfpKzFJZYA/s48-c-k-no/photo.jpg");
         results.add(elementData);
 
 
@@ -66,7 +48,7 @@ public class Constantes extends Application {
         results.add(elementData);
 
 
-        elementData = new Item("Cogullada", "http://www.eldiariomontanes.es/noticias/201106/06/Media/activites-trasmiera--647x231.JPG");
+        elementData = new Item("Cogullada", "https://khms0.google.es/kh/v=141&src=app&cookie=fzwq2t5XM6zEgNVbCMabgjEAEVUolAo0XfrNmw&x=2020&y=1513&z=12&s=Galil");
         results.add(elementData);
 
 
@@ -78,6 +60,18 @@ public class Constantes extends Application {
         results.add(elementData);
 
         elementData = new Item("Valencia", "http://www.elpais.com/recorte/20080111elpval_1/LCO340/Ies/Grandes_contenedores_escombros_muebles_primer_ecoparque_Valencia.jpg");
+        results.add(elementData);
+
+        elementData = new Item("Madrid", "http://foto.hrsstatic.com/fotos/0/3/256/256/80/FFFFFF/http%3A%2F%2Ffoto-origin.hrsstatic.com%2Ffoto%2F0%2F5%2F6%2F5%2F056536%2F056536_a_3556338.jpg/l%2BvJ65tJeZ21DUXH%2Fr28wA%3D%3D/2592,1751/6/Muehlenthalers_Park_Hotel-Konz-Aussenansicht-2-56536.jpg");
+        results.add(elementData);
+
+        elementData = new Item("Torrejón de Ardoz", "https://pbs.twimg.com/profile_images/3156998453/173bb256153918a667d89a09fe537377.jpeg");
+        results.add(elementData);
+
+        elementData = new Item("Basauri", "https://gp3.googleusercontent.com/-y9ZsmNL_vJU/AAAAAAAAAAI/AAAAAAAAAAA/PwfpKzFJZYA/s48-c-k-no/photo.jpg");
+        results.add(elementData);
+
+        elementData = new Item("Bilbao", "https://khms0.google.es/kh/v=141&src=app&cookie=fzwq2t5XM6zEgNVbCMabgjEAEVUolAo0XfrNmw&x=2020&y=1513&z=12&s=Galil");
         results.add(elementData);
 
         return results;
