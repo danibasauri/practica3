@@ -1,4 +1,4 @@
-package com.dani.objects;
+package com.ecoparque.objects;
 
 /**
  * Created by dcandelas on 20/11/13.

@@ -1,4 +1,4 @@
-package com.dani.ecoparque;
+package com.ecoparque.activites;
 
 import android.app.Activity;
 import android.app.DialogFragment;
@@ -20,7 +20,9 @@ import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.Toast;
 
-import com.dani.objects.Validador;
+import com.dani.ecoparque.R;
+import com.ecoparque.fragments.DesconectarFragment;
+import com.ecoparque.objects.Validador;
 
 public class DatosEmpresa extends Activity implements AdapterView.OnItemSelectedListener {
     private EditText nif, tlf, mail, url, nombre;
@@ -34,12 +36,12 @@ public class DatosEmpresa extends Activity implements AdapterView.OnItemSelected
         setContentView(R.layout.fragment_datos_empresa);
 
         Spinner spinner = (Spinner) findViewById(R.id.areas_empresa);
-        // Create an ArrayAdapter using the string array and a default spinner layout
+
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this,
                 R.array.areas_empresa, android.R.layout.simple_spinner_item);
-        // Specify the layout to use when the list of choices appears
+
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        // Apply the adapter to the spinner
+
         spinner.setAdapter(adapter);
         spinner.setOnItemSelectedListener(this);
 
@@ -89,7 +91,6 @@ public class DatosEmpresa extends Activity implements AdapterView.OnItemSelected
                 Intent email = new Intent(Intent.ACTION_SEND);
 
                 email.setType("message/rfc822");
-                //email.putExtra(Intent.EXTRA_EMAIL, );
                 email.putExtra(Intent.EXTRA_EMAIL, new String[]{mail.getText().toString()});
                 startActivity(email);
             }
@@ -108,7 +109,6 @@ public class DatosEmpresa extends Activity implements AdapterView.OnItemSelected
         btnInfoDom.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String stringUrl = url.getText().toString();
                 ConnectivityManager connMgr = (ConnectivityManager)
                         getSystemService(Context.CONNECTIVITY_SERVICE);
                 NetworkInfo networkInfo = connMgr.getActiveNetworkInfo();
@@ -150,23 +150,18 @@ public class DatosEmpresa extends Activity implements AdapterView.OnItemSelected
     }
 
     public void onNothingSelected(AdapterView<?> parent) {
-        // Another interface callback
+
     }
 
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-
-        // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.datos_empresa, menu);
         return true;
     }
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
         if (id == R.id.action_settings) {
             DialogFragment newFragment = new DesconectarFragment();
@@ -175,8 +170,6 @@ public class DatosEmpresa extends Activity implements AdapterView.OnItemSelected
         }
         return super.onOptionsItemSelected(item);
     }
-
-// EditTextWacther  Implementation
 
     private final TextWatcher mTextEditorWatcher = new TextWatcher() {
 

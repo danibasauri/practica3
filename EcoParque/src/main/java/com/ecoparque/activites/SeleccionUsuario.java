@@ -1,4 +1,4 @@
-package com.dani.ecoparque;
+package com.ecoparque.activites;
 
 import android.app.Activity;
 import android.app.DialogFragment;
@@ -14,13 +14,14 @@ import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.TextView;
 
-import com.dani.objects.Validador;
+import com.dani.ecoparque.R;
+import com.ecoparque.fragments.DesconectarFragment;
+import com.ecoparque.objects.Validador;
 
 public class SeleccionUsuario extends Activity {
-    //protected EditText editTextEmail = (EditText) findViewById(R.id.email);
     private EditText editTextIdent;
     private Button botonIniciar;
-    public final static String EXTRA_MESSAGE = "com.dani.ecoparque.SeleccionUsuario.MESSAGE";
+    public final static String EXTRA_MESSAGE = "com.ecoparque.activites.SeleccionUsuario.MESSAGE";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -52,10 +53,10 @@ public class SeleccionUsuario extends Activity {
     }
 
     public void onRadioButtonClicked(View view) {
-        // Is the button now checked?
+
         boolean checked = ((RadioButton) view).isChecked();
 
-        // Check which radio button was clicked
+
         switch (view.getId()) {
             case R.id.radio_ciudadano:
                 if (checked) {
@@ -90,17 +91,12 @@ public class SeleccionUsuario extends Activity {
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-
-        // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.seleccion_usuario, menu);
         return true;
     }
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
         if (id == R.id.action_settings) {
             DialogFragment newFragment = new DesconectarFragment();
@@ -110,8 +106,6 @@ public class SeleccionUsuario extends Activity {
         return super.onOptionsItemSelected(item);
     }
 
-
-    // EditTextWacther  Implementation
 
     private final TextWatcher mTextEditorWatcher = new TextWatcher() {
 
@@ -154,7 +148,6 @@ public class SeleccionUsuario extends Activity {
                 }
             }*/
         }
-
 
     };
 }

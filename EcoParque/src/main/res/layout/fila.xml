@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="fill_parent"
     android:layout_height="wrap_content"
     android:minHeight="50dp"
@@ -16,13 +16,15 @@
 
     <TextView
         android:id="@+id/title"
-        android:layout_width="wrap_content"
+        android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:layout_toRightOf="@id/thumbImage"
+        android:layout_weight="1"
+        android:layout_gravity="center"
+        android:textSize="17dp"
         android:paddingLeft="5dp"
         android:paddingTop="5dp"
         android:text=""
-        android:textStyle="bold"
+
         android:typeface="sans" />
 
-</RelativeLayout>
+</LinearLayout>

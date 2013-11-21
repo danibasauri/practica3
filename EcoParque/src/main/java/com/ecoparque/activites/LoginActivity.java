@@ -1,4 +1,4 @@
-package com.dani.ecoparque;
+package com.ecoparque.activites;
 
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
@@ -21,10 +21,8 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
-/**
- * Activity which displays a login screen to the user, offering registration as
- * well.
- */
+import com.dani.ecoparque.R;
+
 public class LoginActivity extends Activity {
 
     public static final String NOMBRE_PREFERENCIAS = "MisPrefs";
@@ -33,15 +31,9 @@ public class LoginActivity extends Activity {
                     "m@m:mmmm",
             };
 
-    /**
-     * The default email to populate the email field with.
-     */
+
     public static final String EXTRA_EMAIL = "com.example.android.authenticatordemo.extra.EMAIL";
 
-
-    /**
-     * Keep track of the login task to ensure we can cancel it if requested.
-     */
     private UserLoginTask mAuthTask = null;
 
     // Values for email and password at the time of the login attempt.
@@ -152,12 +144,8 @@ public class LoginActivity extends Activity {
         }
 
         if (cancel) {
-            // There was an error; don't attempt login and focus the first
-            // form field with an error.
             focusView.requestFocus();
         } else {
-            // Show a progress spinner, and kick off a background task to
-            // perform the user login attempt.
             mLoginStatusMessageView.setText(R.string.login_progress_signing_in);
             showProgress(true);
             mAuthTask = new UserLoginTask();
@@ -165,9 +153,7 @@ public class LoginActivity extends Activity {
         }
     }
 
-    /**
-     * Shows the progress UI and hides the login form.
-     */
+
     @TargetApi(Build.VERSION_CODES.HONEYCOMB_MR2)
     private void showProgress(final boolean show) {
         // On Honeycomb MR2 we have the ViewPropertyAnimator APIs, which allow
@@ -205,18 +191,14 @@ public class LoginActivity extends Activity {
         }
     }
 
-    /**
-     * Represents an asynchronous login/registration task used to authenticate
-     * the user.
-     */
+    //En caso de implementar un sistema real, se pasaría a una clase externa
     public class UserLoginTask extends AsyncTask<Void, Void, Boolean> {
         @Override
         protected Boolean doInBackground(Void... params) {
-            // TODO: attempt authentication against a network service.
 
             try {
                 // Simulate network access.
-                Thread.sleep(2000);
+                Thread.sleep(1500);
             } catch (InterruptedException e) {
                 return false;
             }
@@ -255,8 +237,6 @@ public class LoginActivity extends Activity {
         }
     }
 
-    // EditTextWacther  Implementation
-
     private final TextWatcher mTextEditorWatcher = new TextWatcher() {
 
 
@@ -276,7 +256,6 @@ public class LoginActivity extends Activity {
             else
                 findViewById(R.id.acceder).setEnabled(false);
         }
-
 
     };
 

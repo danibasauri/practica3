@@ -1,4 +1,4 @@
-package com.dani.objects;
+package com.ecoparque.objects;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 

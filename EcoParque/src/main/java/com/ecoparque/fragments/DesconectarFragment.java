@@ -1,4 +1,4 @@
-package com.dani.ecoparque;
+package com.ecoparque.fragments;
 
 import android.app.AlertDialog;
 import android.app.Dialog;
@@ -7,10 +7,13 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 
+import com.dani.ecoparque.R;
+import com.ecoparque.activites.LoginActivity;
+
+
 public class DesconectarFragment extends DialogFragment {
     @Override
     public Dialog onCreateDialog(Bundle savedInstanceState) {
-        // Use the Builder class for convenient dialog construction
         AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
         builder.setMessage(R.string.confirmacion)
                 .setPositiveButton(R.string.si, new DialogInterface.OnClickListener() {
@@ -29,7 +32,6 @@ public class DesconectarFragment extends DialogFragment {
                         dismiss();
                     }
                 });
-        // Create the AlertDialog object and return it
         return builder.create();
     }
 }

@@ -1,4 +1,4 @@
-package com.dani.ecoparque;
+package com.ecoparque.activites;
 
 import android.app.Activity;
 import android.app.DialogFragment;
@@ -6,10 +6,11 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
 import android.widget.EditText;
 
-import com.dani.objects.ParseWebTask;
+import com.dani.ecoparque.R;
+import com.ecoparque.asyncTasks.ParseWebTask;
+import com.ecoparque.fragments.DesconectarFragment;
 
 public class DatosDominio extends Activity {
     private EditText urlEmpresa;
@@ -17,7 +18,7 @@ public class DatosDominio extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-       setContentView(R.layout.fragment_datos_dominio);
+        setContentView(R.layout.fragment_datos_dominio);
 
 
         Intent intent = getIntent();

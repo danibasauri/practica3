@@ -1,31 +1,13 @@
-package com.dani.ecoparque;
+package com.ecoparque.objects;
 
 import android.app.Application;
-
-import com.dani.objects.Item;
 
 import java.util.ArrayList;
 
 /**
  * Created by dcandelas on 20/11/13.
  */
-public class Constantes extends Application
-{
-    public static final String[] IMAGES = new String[] {
-        "http://tabletpcssource.com/wp-content/uploads/2011/05/android-logo.png",
-        "http://simpozia.com/pages/images/stories/windows-icon.png",
-        "https://si0.twimg.com/profile_images/1135218951/gmail_profile_icon3_normal.png",
-        "http://www.krify.net/wp-content/uploads/2011/09/Macromedia_Flash_dock_icon.png",
-        "http://radiotray.sourceforge.net/radio.png",
-        "http://www.bandwidthblog.com/wp-content/uploads/2011/11/twitter-logo.png",
-        "http://weloveicons.s3.amazonaws.com/icons/100907_itunes1.png",
-        "http://weloveicons.s3.amazonaws.com/icons/100929_applications.png",
-        "http://www.idyllicmusic.com/index_files/get_apple-iphone.png",
-        "http://www.frenchrevolutionfood.com/wp-content/uploads/2009/04/Twitter-Bird.png",
-        "http://3.bp.blogspot.com/-ka5MiRGJ_S4/TdD9OoF6bmI/AAAAAAAAE8k/7ydKtptUtSg/s1600/Google_Sky%2BMaps_Android.png",
-        "http://www.desiredsoft.com/images/icon_webhosting.png",
-        "http://goodereader.com/apps/wp-content/uploads/downloads/thumbnails/2012/01/hi-256-0-99dda8c730196ab93c67f0659d5b8489abdeb977.png",
-};
+public class Constantes extends Application {
 
     public static String getPuntoLimpio() {
         return puntoLimpio;
@@ -38,6 +20,23 @@ public class Constantes extends Application
     private static String puntoLimpio;
 
 
+    public static final String[] IMAGES = new String[]{
+            "http://tabletpcssource.com/wp-content/uploads/2011/05/android-logo.png",
+            "http://simpozia.com/pages/images/stories/windows-icon.png",
+            "https://si0.twimg.com/profile_images/1135218951/gmail_profile_icon3_normal.png",
+            "http://www.krify.net/wp-content/uploads/2011/09/Macromedia_Flash_dock_icon.png",
+            "http://radiotray.sourceforge.net/radio.png",
+            "http://www.bandwidthblog.com/wp-content/uploads/2011/11/twitter-logo.png",
+            "http://weloveicons.s3.amazonaws.com/icons/100907_itunes1.png",
+            "http://weloveicons.s3.amazonaws.com/icons/100929_applications.png",
+            "http://www.idyllicmusic.com/index_files/get_apple-iphone.png",
+            "http://www.frenchrevolutionfood.com/wp-content/uploads/2009/04/Twitter-Bird.png",
+            "http://3.bp.blogspot.com/-ka5MiRGJ_S4/TdD9OoF6bmI/AAAAAAAAE8k/7ydKtptUtSg/s1600/Google_Sky%2BMaps_Android.png",
+            "http://www.desiredsoft.com/images/icon_webhosting.png",
+            "http://goodereader.com/apps/wp-content/uploads/downloads/thumbnails/2012/01/hi-256-0-99dda8c730196ab93c67f0659d5b8489abdeb977.png",
+    };
+
+
     public ArrayList getListData() {
         ArrayList results = new ArrayList();
         Item elementData = new Item("Sercomosa", "http://www.sercomosa.es/images/serv_ecoparque1.jpg");
@@ -48,7 +47,7 @@ public class Constantes extends Application
         results.add(elementData);
 
 
-        elementData = new Item("Cartagena Sur", "http://www.cartagenaactualidad.com/wp-content/uploads/2013/04/ecoparque.jpg");
+        elementData = new Item("Cartagena Sur", "http://www.cartagenaactualidad.com/wp-content/uploads/2013/04/activites.jpg");
         results.add(elementData);
 
 
@@ -67,7 +66,7 @@ public class Constantes extends Application
         results.add(elementData);
 
 
-        elementData = new Item("Cogullada", "http://www.eldiariomontanes.es/noticias/201106/06/Media/ecoparque-trasmiera--647x231.JPG");
+        elementData = new Item("Cogullada", "http://www.eldiariomontanes.es/noticias/201106/06/Media/activites-trasmiera--647x231.JPG");
         results.add(elementData);
 
 

@@ -1,4 +1,4 @@
-package com.dani.ecoparque;
+package com.ecoparque.activites;
 
 import android.app.Activity;
 import android.app.DialogFragment;
@@ -13,6 +13,9 @@ import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
 import android.widget.EditText;
+
+import com.dani.ecoparque.R;
+import com.ecoparque.fragments.DesconectarFragment;
 
 public class Depositante extends Activity {
 
@@ -116,17 +119,12 @@ public class Depositante extends Activity {
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-
-        // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.depositante, menu);
         return true;
     }
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
         if (id == R.id.action_settings) {
             DialogFragment newFragment = new DesconectarFragment();
@@ -135,8 +133,6 @@ public class Depositante extends Activity {
         }
         return super.onOptionsItemSelected(item);
     }
-
-    // EditTextWacther  Implementation
 
     private final TextWatcher mTextEditorWatcher = new TextWatcher() {
 
