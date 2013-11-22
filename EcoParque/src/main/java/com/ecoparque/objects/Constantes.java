@@ -74,6 +74,33 @@ public class Constantes extends Application {
         elementData = new Item("Bilbao", "https://khms0.google.es/kh/v=141&src=app&cookie=fzwq2t5XM6zEgNVbCMabgjEAEVUolAo0XfrNmw&x=2020&y=1513&z=12&s=Galil");
         results.add(elementData);
 
+        elementData = new Item("Amurrio", "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcSl3uLqk7Y_ZgknWO5V2tcx-22BOiphhYNFV8iIslEQGtxa_xJXCQ");
+        results.add(elementData);
+
+        elementData = new Item("Galdakao", "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTD3lS0bKqtSAqT-Q2zu7yL2mvONCNGhYPMapy6MXIDgvCo_d-TBw");
+        results.add(elementData);
+
+        elementData = new Item("Amorebieta", "https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcTey_VTVAoaX9XUOPEBRPA882s0iSmzoYosVwbPLIskJHunMIfM_A");
+        results.add(elementData);
+
+        elementData = new Item("Larrabetxu", "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcTPQ1mFWOtnnGUGy3iuwMF8d8Mlm3xQWqI1AHfXXJ_wXhaLWiHAUg");
+        results.add(elementData);
+
+        elementData = new Item("Barakaldo", "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcSw8XZ674Gezink0s4EUaTHwW1He-A6aEWBdtPZlvbCHrKmO3HNbA");
+        results.add(elementData);
+
+        elementData = new Item("Gernika", "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSoVb3o5JDc5lbGdm2NHrr4RS8ftETPv6DBJT73RgZNQ_xIuQvT");
+        results.add(elementData);
+
+        elementData = new Item("Portuondo", "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcT1qBWf3eENpHRJFwhsskRBoKzMV__aJ1PoxBhR2brbN1PXXZJ1");
+        results.add(elementData);
+
+        elementData = new Item("Erandio", "https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcRe-JEXMmhCo6Z6hwMiFmLAusFJ33nngygUU6uvMmWK_SJpsYej");
+        results.add(elementData);
+
+        elementData = new Item("Muxika", "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ9Z36iPWK6FbSQtCVMbj6WNi9yZnxRLoMKNU7SjvuM-d6-vDnYGQ");
+        results.add(elementData);
+
         return results;
     }
 

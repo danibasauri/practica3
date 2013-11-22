@@ -2,6 +2,7 @@ package com.ecoparque.objects;
 
 import android.app.Activity;
 import android.content.Context;
+import android.os.AsyncTask;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -10,7 +11,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.dani.ecoparque.R;
-import com.ecoparque.asyncTasks.ImageLoaderTask;
+import com.ecoparque.asyncTasks.ImageDownloadTask;
 
 import java.util.ArrayList;
 
@@ -22,14 +23,12 @@ public class LazyAdapter extends BaseAdapter {
     private Activity activity;
     private ArrayList<Item> data;
     private static LayoutInflater inflater = null;
-    //public ImageLoader imageLoader;
-    public ImageLoaderTask imageLoaderTask;
+    public ImageDownloadTask imDownlTask;
 
     public LazyAdapter(Activity a, ArrayList d) {
         activity = a;
         data = d;
         inflater = (LayoutInflater) activity.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-
     }
 
     public int getCount() {
@@ -44,6 +43,7 @@ public class LazyAdapter extends BaseAdapter {
         return position;
     }
 
+
     public View getView(int position, View convertView, ViewGroup parent) {
         ViewHolder holder;
         if (convertView == null) {
@@ -51,20 +51,23 @@ public class LazyAdapter extends BaseAdapter {
             holder = new ViewHolder();
             holder.nameView = (TextView) convertView.findViewById(R.id.text);
             holder.imageView = (ImageView) convertView.findViewById(R.id.image);
-
+            holder.position = position;
             convertView.setTag(holder);
         } else {
             holder = (ViewHolder) convertView.getTag();
         }
 
         holder.nameView.setText(data.get(position).getName());
-        imageLoaderTask = new ImageLoaderTask(activity.getApplicationContext(), data.get(position).getUrl() ,holder.imageView);
-        imageLoaderTask.execute(data.get(position).getUrl());
+        holder.position = position;
+        imDownlTask = new ImageDownloadTask(data.get(position).getUrl(),  activity.getApplicationContext(), position, holder);
+        imDownlTask.executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR, data.get(position).getUrl());
         return convertView;
     }
 
-    static class ViewHolder {
+
+    public static class ViewHolder {
         TextView nameView;
-        ImageView imageView;
+        public ImageView imageView;
+        public int position;
     }
 }

@@ -13,12 +13,14 @@ import android.widget.ListView;
 import com.dani.ecoparque.R;
 import com.ecoparque.fragments.DesconectarFragment;
 import com.ecoparque.objects.Constantes;
-import com.ecoparque.objects.LazyAdapter;
 import com.ecoparque.objects.Item;
+import com.ecoparque.objects.LazyAdapter;
 
 import java.util.ArrayList;
 
 public class SeleccionPuntoLimpio extends Activity {
+
+    private ListView list;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,7 +28,7 @@ public class SeleccionPuntoLimpio extends Activity {
         setContentView(R.layout.fragment_seleccion_punto_limpio);
         final Constantes appState = (Constantes) getApplicationContext();
         ArrayList image_details = appState.getListData();
-        final ListView list = (ListView) findViewById(R.id.listView1);
+        list = (ListView) findViewById(R.id.listView1);
         list.setAdapter(new LazyAdapter(this, image_details));
         list.setOnItemClickListener(new AdapterView.OnItemClickListener() {
 
@@ -41,6 +43,7 @@ public class SeleccionPuntoLimpio extends Activity {
         });
 
     }
+
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
