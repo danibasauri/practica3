@@ -18,6 +18,7 @@
                 android:orientation="vertical">
 
                 <Spinner
+                    android:layout_marginTop="5dp"
                     android:id="@+id/areas_empresa"
                     android:textSize="@dimen/contenido"
                     android:layout_width="fill_parent"

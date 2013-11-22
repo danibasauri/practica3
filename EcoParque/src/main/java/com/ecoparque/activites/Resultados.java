@@ -24,7 +24,8 @@ import java.util.Calendar;
 public class Resultados extends FragmentActivity {
     private LinearLayout coste;
     private Button enviarMail, registroNuevo, editarFecha;
-    private TextView ident, matInf, aceites, neveras, cantResiduos, txtCalculo, txtPrecio, txtIVA, txtTotal, iva, total, fecha, puntoLimpio;
+    private TextView ident, matInf, aceites, neveras, cantResiduos, txtCalculo,
+            txtPrecio, txtIVA, txtTotal, iva, total, fecha, puntoLimpio;
     private String contenidoMensaje;
 
 

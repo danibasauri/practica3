@@ -90,7 +90,7 @@
                     android:layout_marginLeft="20dp"
                     android:layout_marginRight="20dp"
                     android:layout_gravity="center"
-                    android:enabled="true" />
+                    android:enabled="false" />
             </LinearLayout>
         </LinearLayout>
     </ScrollView>
