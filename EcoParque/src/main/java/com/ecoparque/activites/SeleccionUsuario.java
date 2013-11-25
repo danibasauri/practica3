@@ -14,7 +14,6 @@ import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.TextView;
 
-
 import com.ecoparque.R;
 import com.ecoparque.fragments.DesconectarFragment;
 import com.ecoparque.objects.Validador;

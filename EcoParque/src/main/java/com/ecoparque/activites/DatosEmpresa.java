@@ -2,10 +2,7 @@ package com.ecoparque.activites;
 
 import android.app.Activity;
 import android.app.DialogFragment;
-import android.content.Context;
 import android.content.Intent;
-import android.net.ConnectivityManager;
-import android.net.NetworkInfo;
 import android.net.Uri;
 import android.os.Bundle;
 import android.text.Editable;
@@ -21,7 +18,9 @@ import android.widget.Spinner;
 import android.widget.Toast;
 
 import com.ecoparque.R;
+import com.ecoparque.asyncTasks.ParseWebTask;
 import com.ecoparque.fragments.DesconectarFragment;
+import com.ecoparque.objects.NetInfo;
 import com.ecoparque.objects.Validador;
 
 public class DatosEmpresa extends Activity implements AdapterView.OnItemSelectedListener {
@@ -29,6 +28,7 @@ public class DatosEmpresa extends Activity implements AdapterView.OnItemSelected
     private Button btnTlf, btnMail, btnUrl, btnSiguiente, btnInfoDom;
     private Validador validador = new Validador();
     private String browserUrl;
+    NetInfo netInfo = new NetInfo(DatosEmpresa.this);
 
 
     @Override
@@ -89,11 +89,15 @@ public class DatosEmpresa extends Activity implements AdapterView.OnItemSelected
         btnMail.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent email = new Intent(Intent.ACTION_SEND);
+                if (netInfo.isConnected()) {
+                    Intent email = new Intent(Intent.ACTION_SEND);
 
-                email.setType("message/rfc822");
-                email.putExtra(Intent.EXTRA_EMAIL, new String[]{mail.getText().toString()});
-                startActivity(email);
+                    email.setType("message/rfc822");
+                    email.putExtra(Intent.EXTRA_EMAIL, new String[]{mail.getText().toString()});
+                    startActivity(email);
+                } else {
+                    Toast.makeText(getApplicationContext(), "Comprueba tu conexión a internet", 1000).show();
+                }
             }
         });
 
@@ -102,26 +106,26 @@ public class DatosEmpresa extends Activity implements AdapterView.OnItemSelected
             @Override
 
             public void onClick(View v) {
-                if (!url.getText().toString().startsWith("https://") && !url.getText().toString().startsWith("http://"))
-                    browserUrl = "http://" + url.getText().toString();
-
-                Uri uri = Uri.parse(browserUrl);
-                startActivity(new Intent(Intent.ACTION_VIEW, uri));
+                if (netInfo.isConnected()) {
+                    if (!url.getText().toString().startsWith("https://") && !url.getText().toString().startsWith("http://"))
+                        browserUrl = "http://" + url.getText().toString();
+                    Uri uri = Uri.parse(browserUrl);
+                    startActivity(new Intent(Intent.ACTION_VIEW, uri));
+                } else {
+                    Toast.makeText(getApplicationContext(), "Comprueba tu conexión a internet", 1000).show();
+                }
             }
         });
 
         btnInfoDom.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                ConnectivityManager connMgr = (ConnectivityManager)
-                        getSystemService(Context.CONNECTIVITY_SERVICE);
-                NetworkInfo networkInfo = connMgr.getActiveNetworkInfo();
-                if (networkInfo != null && networkInfo.isConnected()) {
+                if (netInfo.isConnected()) {
                     Intent intent = new Intent(DatosEmpresa.this, DatosDominio.class);
                     intent.putExtra("urlEmpresa", url.getText().toString());
                     startActivity(intent);
                 } else {
-                    Toast.makeText(getApplicationContext(), "Error al intentar conectarse a internet", 1000).show();
+                    Toast.makeText(getApplicationContext(), "Comprueba tu conexión a internet", 1000).show();
                 }
             }
         }
@@ -135,7 +139,6 @@ public class DatosEmpresa extends Activity implements AdapterView.OnItemSelected
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(DatosEmpresa.this, Depositante.class);
-
                 intent.putExtra(SeleccionUsuario.EXTRA_MESSAGE, nif.getText().toString());
                 intent.putExtra("from", "empresa");
                 startActivity(intent);
