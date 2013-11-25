@@ -21,7 +21,8 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.dani.ecoparque.R;
+import com.ecoparque.R;
+
 
 public class LoginActivity extends Activity {
 

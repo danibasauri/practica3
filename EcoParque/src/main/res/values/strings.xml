@@ -61,7 +61,7 @@
     <string name="error_incorrect_password">Usuario o contraseña incorrectos</string>
     <string name="error_field_required">Campo requerido</string>
     <string name="title_activity_datos_dominio">DatosDominio</string>
-    <string name="titulo_datos">Datos dominio de la empresa</string>
+    <string name="titulo_datos">URL: </string>
     <string name="coordenadas">Coordenadas: </string>
     <string name="localidad">Localidad: </string>
     <string name="pais">País: </string>
@@ -76,5 +76,8 @@
     <string name="confirmacion">¿Estás seguro?</string>
     <string name="si">Sí</string>
     <string name="no">No</string>
+    <string name="title_activity_asfasdfasfas">asfasdfasfas</string>
+    <string name="ver_mapa">Ver en mapa</string>
+    <string name="title_activity_mapa_dominio">MapaDominio</string>
 
 </resources>

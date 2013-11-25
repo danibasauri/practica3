@@ -3,27 +3,36 @@
     style="@style/LayoutPrincipal"
     tools:context=".DatosDominio$PlaceholderFragment">
 
-    <TextView
-        android:text="@string/titulo_datos"
-        android:textSize="@dimen/contenido"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
-
-    <EditText
-        android:id="@+id/url_empresa"
-        android:layout_marginTop="10dp"
+    <LinearLayout
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:textSize="@dimen/contenido"
-        android:maxLines="1"
-        android:editable="false"
-        android:singleLine="true" />
+        android:layout_marginTop="10dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:text="@string/titulo_datos"
+            android:textSize="@dimen/contenido"
+            android:layout_weight="0.1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <EditText
+            android:id="@+id/url_empresa"
+            android:layout_weight="0.9"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/contenido"
+            android:maxLines="1"
+            android:editable="false"
+            android:singleLine="true" />
+    </LinearLayout>
+
 
     <TextView
         android:id="@+id/ip"
         android:textSize="@dimen/contenido"
         android:text="@string/ip"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="15dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
 
@@ -31,7 +40,7 @@
         android:id="@+id/pais"
         android:textSize="@dimen/contenido"
         android:text="@string/pais"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="12dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
 
@@ -39,7 +48,7 @@
         android:id="@+id/localidad"
         android:textSize="@dimen/contenido"
         android:text="@string/localidad"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="12dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
 
@@ -47,8 +56,20 @@
         android:id="@+id/coordenadas"
         android:textSize="@dimen/contenido"
         android:text="@string/coordenadas"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="12dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
+
+    <Button
+        android:id="@+id/btn_siguiente"
+        android:layout_width="fill_parent"
+        android:layout_marginTop="15dp"
+        android:layout_marginLeft="25dp"
+        android:layout_marginRight="25dp"
+        android:layout_gravity="bottom"
+        android:layout_height="wrap_content"
+        android:enabled="false"
+        android:onClick="validar"
+        android:text="@string/ver_mapa" />
 
 </LinearLayout>

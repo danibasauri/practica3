@@ -7,7 +7,8 @@ import android.os.Bundle;
 import android.widget.DatePicker;
 import android.widget.TextView;
 
-import com.dani.ecoparque.R;
+
+import com.ecoparque.R;
 
 import java.util.Calendar;
 

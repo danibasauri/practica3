@@ -12,7 +12,8 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.dani.ecoparque.R;
+
+import com.ecoparque.R;
 import com.ecoparque.fragments.DatePickerFragment;
 import com.ecoparque.fragments.DesconectarFragment;
 import com.ecoparque.objects.Constantes;

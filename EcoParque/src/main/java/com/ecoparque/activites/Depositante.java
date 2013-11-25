@@ -14,7 +14,8 @@ import android.widget.CheckBox;
 import android.widget.CompoundButton;
 import android.widget.EditText;
 
-import com.dani.ecoparque.R;
+
+import com.ecoparque.R;
 import com.ecoparque.fragments.DesconectarFragment;
 
 public class Depositante extends Activity {

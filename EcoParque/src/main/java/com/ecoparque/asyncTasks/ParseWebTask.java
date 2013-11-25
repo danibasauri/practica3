@@ -6,9 +6,14 @@ import android.os.AsyncTask;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.dani.ecoparque.R;
+
+import com.ecoparque.R;
 import com.ecoparque.objects.UrlInfo;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.google.android.gms.maps.CameraUpdateFactory;
+import com.google.android.gms.maps.GoogleMap;
+import com.google.android.gms.maps.model.LatLng;
+import com.google.android.gms.maps.model.MarkerOptions;
 
 import java.io.IOException;
 import java.net.URL;
@@ -20,9 +25,11 @@ public class ParseWebTask extends AsyncTask<String, Integer, String> {
     private ObjectMapper mapper = new ObjectMapper();
     private UrlInfo urlInfo;
     private ProgressDialog pDialog;
+    private GoogleMap mMap;
 
-    public ParseWebTask(Activity activity) {
+    public ParseWebTask(Activity activity, GoogleMap map) {
         this.activity = activity;
+        mMap = map;
     }
 
     @Override
@@ -65,6 +72,17 @@ public class ParseWebTask extends AsyncTask<String, Integer, String> {
             pais.setText(pais.getText().toString() + urlInfo.getCountry_name() + "(" + urlInfo.getCountry_code() + ")");
             localidad.setText(localidad.getText().toString() + urlInfo.getCity());
             coordenadas.setText(coordenadas.getText().toString() + urlInfo.getLatitude() + ", " + urlInfo.getLongitude());
+
+            mMap.setMyLocationEnabled(true);
+
+            LatLng usjLatLong = new LatLng(Double.parseDouble(urlInfo.getLatitude()), Double.parseDouble(urlInfo.getLongitude()));
+            mMap.addMarker(new MarkerOptions()
+                    .position(usjLatLong)
+                    .title("USJ")
+                    .snippet("La Universidad San Jorge"));
+
+
+            mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(usjLatLong, 13.0f));
         } catch (NullPointerException e) {
             Toast.makeText(activity, "No se ha podido acceder a la página web", 500).show();
         }

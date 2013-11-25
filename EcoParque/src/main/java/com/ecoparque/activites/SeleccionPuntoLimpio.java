@@ -10,7 +10,8 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
 
-import com.dani.ecoparque.R;
+
+import com.ecoparque.R;
 import com.ecoparque.fragments.DesconectarFragment;
 import com.ecoparque.objects.Constantes;
 import com.ecoparque.objects.Item;

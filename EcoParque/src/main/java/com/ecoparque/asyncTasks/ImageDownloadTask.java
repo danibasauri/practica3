@@ -6,7 +6,8 @@ import android.os.AsyncTask;
 import android.util.Log;
 import android.widget.ImageView;
 
-import com.dani.ecoparque.R;
+
+import com.ecoparque.R;
 import com.ecoparque.objects.FileCache;
 import com.ecoparque.objects.LazyAdapter;
 import com.ecoparque.objects.MemoryCache;

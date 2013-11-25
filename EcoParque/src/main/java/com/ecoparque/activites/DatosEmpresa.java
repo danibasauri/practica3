@@ -20,7 +20,7 @@ import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.Toast;
 
-import com.dani.ecoparque.R;
+import com.ecoparque.R;
 import com.ecoparque.fragments.DesconectarFragment;
 import com.ecoparque.objects.Validador;
 
@@ -28,6 +28,7 @@ public class DatosEmpresa extends Activity implements AdapterView.OnItemSelected
     private EditText nif, tlf, mail, url, nombre;
     private Button btnTlf, btnMail, btnUrl, btnSiguiente, btnInfoDom;
     private Validador validador = new Validador();
+    private String browserUrl;
 
 
     @Override
@@ -96,12 +97,15 @@ public class DatosEmpresa extends Activity implements AdapterView.OnItemSelected
             }
         });
 
+
         btnUrl.setOnClickListener(new View.OnClickListener() {
             @Override
+
             public void onClick(View v) {
                 if (!url.getText().toString().startsWith("https://") && !url.getText().toString().startsWith("http://"))
-                    url.setText("http://" + url.getText().toString());
-                Uri uri = Uri.parse(url.getText().toString());
+                    browserUrl = "http://" + url.getText().toString();
+
+                Uri uri = Uri.parse(browserUrl);
                 startActivity(new Intent(Intent.ACTION_VIEW, uri));
             }
         });

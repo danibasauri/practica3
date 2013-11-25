@@ -10,7 +10,8 @@ import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.dani.ecoparque.R;
+
+import com.ecoparque.R;
 import com.ecoparque.asyncTasks.ImageDownloadTask;
 
 import java.util.ArrayList;
