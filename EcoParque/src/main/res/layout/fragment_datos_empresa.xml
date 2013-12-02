@@ -25,114 +25,63 @@
                     android:layout_height="wrap_content" />
 
                 <EditText
+                    style="@style/textEditSuperiorDatosEmpresa"
                     android:id="@+id/empr_cif"
-                    android:layout_width="fill_parent"
                     android:layout_marginTop="20dp"
-                    android:layout_height="wrap_content"
-                    android:textSize="@dimen/contenido"
-                    android:maxLines="1"
-                    android:editable="false"
-                    android:singleLine="true" />
+                    android:editable="false" />
 
                 <EditText
+                    style="@style/textEditSuperiorDatosEmpresa"
                     android:id="@+id/empr_nombre"
-                    android:layout_width="fill_parent"
-                    android:textSize="@dimen/contenido"
-                    android:layout_height="wrap_content"
                     android:hint="@string/nombre_Empresa"
                     android:inputType="text"
-                    android:maxLines="1"
-                    android:paddingTop="30dp"
-                    android:singleLine="true" />
+                    android:paddingTop="30dp" />
 
-                <LinearLayout
-                    android:layout_width="fill_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="20dp"
-                    android:orientation="horizontal">
+                <LinearLayout style="@style/layoutDatosEmpresa">
 
                     <EditText
+                        style="@style/textEditDatosEmpresa"
                         android:id="@+id/empr_tlf"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:textSize="@dimen/contenido"
                         android:maxLength="10"
-                        android:layout_marginRight="10dp"
-                        android:layout_weight="1"
-
                         android:hint="@string/ejemplo_telf"
-                        android:inputType="number"
-                        android:maxLines="1"
-                        android:singleLine="true" />
+                        android:inputType="number" />
 
 
                     <Button
+                        style="@style/botonDatosEmpresa"
                         android:id="@+id/btn_llamar"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:width="100dp"
-                        android:enabled="false"
-                        android:onClick="validar"
                         android:text="@string/Llamar" />
 
                 </LinearLayout>
 
-                <LinearLayout
-                    android:layout_width="fill_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="20dp"
-                    android:orientation="horizontal">
+                <LinearLayout style="@style/layoutDatosEmpresa">
 
                     <EditText
+                        style="@style/textEditDatosEmpresa"
                         android:id="@+id/empr_mail"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginRight="10dp"
-                        android:textSize="@dimen/contenido"
-                        android:layout_weight="1"
                         android:hint="@string/ejemplo_email"
-                        android:inputType="textEmailAddress"
-                        android:maxLines="1"
-                        android:singleLine="true" />
+                        android:inputType="textEmailAddress" />
 
 
                     <Button
+                        style="@style/botonDatosEmpresa"
                         android:id="@+id/btn_enviar"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:width="100dp"
-                        android:enabled="false"
-                        android:onClick="validar"
                         android:text="@string/Enviar" />
 
                 </LinearLayout>
 
-                <LinearLayout
-                    android:layout_width="fill_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="20dp"
-                    android:orientation="horizontal">
+                <LinearLayout style="@style/layoutDatosEmpresa">
 
                     <EditText
+                        style="@style/textEditDatosEmpresa"
                         android:id="@+id/empr_url"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginRight="10dp"
-                        android:textSize="@dimen/contenido"
-                        android:layout_weight="1"
                         android:hint="@string/ejemplo_url"
-                        android:inputType="textUri"
-                        android:maxLines="1"
-                        android:singleLine="true" />
+                        android:inputType="textUri" />
 
 
                     <Button
+                        style="@style/botonDatosEmpresa"
                         android:id="@+id/btn_abrir"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:width="100dp"
-                        android:enabled="false"
-                        android:onClick="validar"
                         android:text="@string/Abrir" />
 
                 </LinearLayout>
@@ -142,30 +91,18 @@
 
             <LinearLayout
                 style="@style/LayoutInferiorBotones"
-                android:orientation="vertical"
-                android:layout_weight="1">
+                android:orientation="vertical">
 
                 <Button
+                    style="@style/botonInferior"
                     android:id="@+id/btn_info_dominio"
-                    android:layout_width="fill_parent"
-                    android:layout_marginLeft="25dp"
-                    android:layout_marginRight="25dp"
-                    android:layout_gravity="bottom"
-                    android:layout_height="fill_parent"
                     android:enabled="false"
-                    android:onClick="validar"
                     android:text="@string/info_dominio" />
 
                 <Button
+                    style="@style/botonInferior"
                     android:id="@+id/btn_siguiente"
-                    android:layout_width="fill_parent"
-                    android:layout_marginTop="5dp"
-                    android:layout_marginLeft="25dp"
-                    android:layout_marginRight="25dp"
-                    android:layout_gravity="bottom"
-                    android:layout_height="fill_parent"
                     android:enabled="false"
-                    android:onClick="validar"
                     android:text="@string/siguiente" />
             </LinearLayout>
         </LinearLayout>

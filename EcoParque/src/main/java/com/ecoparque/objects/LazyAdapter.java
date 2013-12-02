@@ -20,10 +20,9 @@ import java.util.ArrayList;
  */
 public class LazyAdapter extends BaseAdapter {
 
-    private Activity activity;
-    private ArrayList<Item> data;
+    private final Activity activity;
+    private final ArrayList<Item> data;
     private static LayoutInflater inflater = null;
-    public ImageDownloadTask imDownlTask;
 
     public LazyAdapter(Activity a, ArrayList d) {
         activity = a;
@@ -59,7 +58,7 @@ public class LazyAdapter extends BaseAdapter {
 
         holder.nameView.setText(data.get(position).getName());
         holder.position = position;
-        imDownlTask = new ImageDownloadTask(data.get(position).getUrl(), activity, position, holder);
+        ImageDownloadTask imDownlTask = new ImageDownloadTask(data.get(position).getUrl(), activity, position, holder);
         imDownlTask.executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR, data.get(position).getUrl());
         return convertView;
     }

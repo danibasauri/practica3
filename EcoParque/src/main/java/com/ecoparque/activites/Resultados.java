@@ -26,9 +26,9 @@ public class Resultados extends FragmentActivity {
     private LinearLayout coste;
     private Button enviarMail, registroNuevo, editarFecha;
     private TextView ident, matInf, aceites, neveras, cantResiduos, txtCalculo,
-            txtPrecio, txtIVA, txtTotal, iva, total, fecha, puntoLimpio, txtCoste;
+            txtPrecio, txtIVA, txtTotal, iva, total, fecha, puntoLimpio;
     private String contenidoMensaje;
-    NetInfo netInfo = new NetInfo(Resultados.this);
+    private final NetInfo netInfo = new NetInfo(Resultados.this);
 
 
     @Override

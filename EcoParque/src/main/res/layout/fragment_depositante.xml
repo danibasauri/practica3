@@ -136,13 +136,9 @@
                 android:orientation="vertical">
 
                 <Button
+                    style="@style/botonInferior"
                     android:id="@+id/depositar"
-                    android:layout_width="fill_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="30dp"
-                    android:layout_marginLeft="25dp"
-                    android:layout_marginRight="25dp"
-                    android:layout_gravity="center"
+                    android:layout_marginTop="25dp"
                     android:text="@string/depositar"
                     android:enabled="false" />
             </LinearLayout>

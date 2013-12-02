@@ -3,11 +3,7 @@
     style="@style/LayoutPrincipal"
     tools:context=".DatosDominio$PlaceholderFragment">
 
-    <LinearLayout
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:orientation="horizontal">
+    <LinearLayout style="@style/layoutDominio">
 
         <TextView
             android:text="@string/titulo_datos"
@@ -27,47 +23,54 @@
             android:singleLine="true" />
     </LinearLayout>
 
+    <LinearLayout style="@style/layoutDominio">
 
-    <TextView
-        android:id="@+id/ip"
-        android:textSize="@dimen/contenido"
-        android:text="@string/ip"
-        android:layout_marginTop="15dp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+        <TextView
+            style="@style/innerText"
+            android:text="@string/ip" />
 
-    <TextView
-        android:id="@+id/pais"
-        android:textSize="@dimen/contenido"
-        android:text="@string/pais"
-        android:layout_marginTop="12dp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+        <TextView
+            style="@style/textViewDominio"
+            android:id="@+id/ip" />
+    </LinearLayout>
 
-    <TextView
-        android:id="@+id/localidad"
-        android:textSize="@dimen/contenido"
-        android:text="@string/localidad"
-        android:layout_marginTop="12dp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+    <LinearLayout style="@style/layoutDominio">
 
-    <TextView
-        android:id="@+id/coordenadas"
-        android:textSize="@dimen/contenido"
-        android:text="@string/coordenadas"
-        android:layout_marginTop="12dp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+        <TextView
+            style="@style/innerText"
+            android:text="@string/pais" />
+
+        <TextView
+            style="@style/textViewDominio"
+            android:id="@+id/pais" />
+    </LinearLayout>
+
+    <LinearLayout style="@style/layoutDominio">
+
+        <TextView
+            style="@style/innerText"
+            android:text="@string/localidad" />
+
+        <TextView
+            style="@style/textViewDominio"
+            android:id="@+id/localidad" />
+    </LinearLayout>
+
+    <LinearLayout style="@style/layoutDominio">
+
+        <TextView
+            style="@style/innerText"
+            android:text="@string/coordenadas" />
+
+        <TextView
+            style="@style/textViewDominio"
+            android:id="@+id/coordenadas" />
+
+    </LinearLayout>
 
     <Button
+        style="@style/botonInferior"
         android:id="@+id/btn_mostrar_mapa"
-        android:layout_width="fill_parent"
-        android:layout_marginTop="15dp"
-        android:layout_marginLeft="25dp"
-        android:layout_marginRight="25dp"
-        android:layout_gravity="bottom"
-        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
         android:text="@string/ver_mapa" />
-
 </LinearLayout>

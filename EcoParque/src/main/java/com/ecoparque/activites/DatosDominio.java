@@ -6,8 +6,6 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
-import android.widget.Button;
 import android.widget.EditText;
 
 import com.ecoparque.R;
@@ -16,11 +14,12 @@ import com.ecoparque.fragments.DesconectarFragment;
 
 
 public class DatosDominio extends Activity {
-    private EditText urlEmpresa;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        EditText urlEmpresa;
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.fragment_datos_dominio);
 
@@ -29,10 +28,7 @@ public class DatosDominio extends Activity {
         urlEmpresa = (EditText) findViewById(R.id.url_empresa);
         urlEmpresa.setText(url);
 
-        url = "http://freegeoip.net/json/" + urlEmpresa.getText().toString();
-
         new ParseWebTask(DatosDominio.this).execute(url);
-
     }
 
     @Override

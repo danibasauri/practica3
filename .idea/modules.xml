@@ -3,9 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/EcoParque/EcoParque.iml" filepath="$PROJECT_DIR$/EcoParque/EcoParque.iml" />
-      <module fileurl="file://$PROJECT_DIR$/EcoParqueProject.iml" filepath="$PROJECT_DIR$/EcoParqueProject.iml" />
-      <module fileurl="file://$PROJECT_DIR$/../../../../../Users.iml" filepath="$PROJECT_DIR$/../../../../../Users.iml" />
-      <module fileurl="file://$PROJECT_DIR$/practica2.iml" filepath="$PROJECT_DIR$/practica2.iml" />
+      <module fileurl="file://$PROJECT_DIR$/practicaMapas.iml" filepath="$PROJECT_DIR$/practicaMapas.iml" />
     </modules>
   </component>
 </project>

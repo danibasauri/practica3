@@ -10,6 +10,7 @@
         <LinearLayout
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"
+            android:layout_marginTop="10dp"
             android:orientation="vertical">
 
             <LinearLayout
@@ -24,41 +25,29 @@
                     android:checkedButton="@+id/radio_ciudadano">
 
                     <RadioButton
+                        style="@style/radioButton"
                         android:id="@+id/radio_ciudadano"
-                        android:layout_weight="0.5"
-                        android:textSize="18dp"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
                         android:text="@string/ciudadano_radio"
                         android:onClick="onRadioButtonClicked" />
 
                     <RadioButton
+                        style="@style/radioButton"
                         android:id="@+id/radio_empresa"
-                        android:layout_weight="0.5"
-                        android:textSize="18dp"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
                         android:text="@string/empresa_radio"
                         android:onClick="onRadioButtonClicked" />
                 </RadioGroup>
 
                 <TextView
+                    style="@style/textViewSeleccionUsuario"
                     android:id="@+id/text_CIF"
-                    android:paddingTop="60dp"
                     android:text="@string/intro_CIF"
-                    android:visibility="gone"
-                    android:textSize="18dp"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" />
+                    android:visibility="gone" />
 
                 <TextView
+                    style="@style/textViewSeleccionUsuario"
                     android:id="@+id/text_NIF"
-                    android:paddingTop="60dp"
                     android:text="@string/intro_NIF"
-                    android:visibility="visible"
-                    android:textSize="18dp"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" />
+                    android:visibility="visible" />
 
 
                 <EditText
@@ -81,15 +70,10 @@
                 android:orientation="vertical">
 
                 <Button
-
+                    style="@style/botonInferior"
                     android:id="@+id/iniciar_deposito"
-                    android:layout_width="fill_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="35dp"
+                    android:layout_marginTop="30dp"
                     android:text="@string/iniciar"
-                    android:layout_marginLeft="20dp"
-                    android:layout_marginRight="20dp"
-                    android:layout_gravity="center"
                     android:enabled="false" />
             </LinearLayout>
         </LinearLayout>

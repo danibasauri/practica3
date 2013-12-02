@@ -13,20 +13,20 @@ import com.ecoparque.R;
 import com.ecoparque.activites.MapaDominio;
 import com.ecoparque.objects.UrlInfo;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.google.android.gms.maps.GoogleMap;
 
 import java.io.IOException;
 import java.net.URL;
 
 public class ParseWebTask extends AsyncTask<String, Integer, String> {
-    Activity activity;
+    private final Activity activity;
     private TextView ip, pais, localidad, coordenadas;
     private static final String DEBUG_TAG = "HttpExample";
-    private ObjectMapper mapper = new ObjectMapper();
+    private final ObjectMapper mapper = new ObjectMapper();
     private UrlInfo urlInfo;
     private ProgressDialog pDialog;
-    private GoogleMap mMap;
     private Button mostrarMapa;
+    private String mUrl;
+    private final String JSONurl = "http://freegeoip.net/json/";
 
     public ParseWebTask(Activity activity) {
         this.activity = activity;
@@ -46,9 +46,10 @@ public class ParseWebTask extends AsyncTask<String, Integer, String> {
     @Override
     protected String doInBackground(String... urls) {
         try {
-
+            mUrl = urls[0];
             publishProgress(0);
-            urlInfo = mapper.readValue(new URL(urls[0]), UrlInfo.class);
+            String finalUrl = JSONurl + mUrl;
+            urlInfo = mapper.readValue(new URL(finalUrl), UrlInfo.class);
             publishProgress(1);
         } catch (
                 IOException e
@@ -65,7 +66,7 @@ public class ParseWebTask extends AsyncTask<String, Integer, String> {
     @Override
     protected void onPostExecute(String result) throws NullPointerException {
         if (result.equalsIgnoreCase("ok")) {
-            try{
+            try {
 
                 ip = (TextView) activity.findViewById(R.id.ip);
                 pais = (TextView) activity.findViewById(R.id.pais);
@@ -73,7 +74,7 @@ public class ParseWebTask extends AsyncTask<String, Integer, String> {
                 coordenadas = (TextView) activity.findViewById(R.id.coordenadas);
 
                 ip.setText(ip.getText().toString() + urlInfo.getIp());
-                pais.setText(pais.getText().toString() + urlInfo.getCountry_name() + "(" + urlInfo.getCountry_code() + ")");
+                pais.setText(pais.getText().toString() + urlInfo.getCountry_name() + " (" + urlInfo.getCountry_code() + ")");
                 localidad.setText(localidad.getText().toString() + urlInfo.getCity());
                 coordenadas.setText(coordenadas.getText().toString() + urlInfo.getLatitude() + ", " + urlInfo.getLongitude());
 
@@ -85,6 +86,8 @@ public class ParseWebTask extends AsyncTask<String, Integer, String> {
                         Intent intent = new Intent(activity, MapaDominio.class);
                         intent.putExtra("lat", urlInfo.getLatitude());
                         intent.putExtra("lon", urlInfo.getLongitude());
+                        intent.putExtra("ciudad", urlInfo.getCity());
+                        intent.putExtra("url", mUrl);
                         activity.startActivity(intent);
                     }
                 });

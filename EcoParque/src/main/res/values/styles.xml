@@ -1,16 +1,96 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <!-- Base application theme. -->
-    <style name="AppTheme" parent="android:Theme.Holo.Light"></style>
+    <!-- Tema por defecto. Se elimina el background para que sea más eficiente -->
+    <style name="Theme.NoBackground" parent="android:Theme.Holo.Light">
+        <item name="android:windowBackground">@null</item>
+    </style>
 
-    <style name="ThemeWithoutBar" parent="android:Theme.Holo.Light.NoActionBar"></style>
+    <!-- Tema por defecto pero con el background, ya que LoginActivity daba problemas sin él -->
+    <style name="Theme" parent="android:Theme.Holo.Light" />
+
+    <style name="Theme.NoBar" parent="android:Theme.Holo.Light.NoActionBar" />
 
     <style name="LoginFormContainer">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:padding">16dp</item>
     </style>
+
+    <style name="textEditDatosEmpresa">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">@dimen/contenido</item>
+        <item name="android:layout_marginRight">10dp</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:maxLines">1</item>
+        <item name="android:singleLine">true</item>
+    </style>
+
+    <style name="textEditSuperiorDatosEmpresa">
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">@dimen/contenido</item>
+        <item name="android:maxLines">1</item>
+        <item name="android:singleLine">true</item>
+    </style>
+
+    <style name="textViewSeleccionUsuario">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">18dp</item>
+        <item name="android:paddingTop">60dp</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:maxLines">1</item>
+        <item name="android:singleLine">true</item>
+    </style>
+
+    <style name="innerText">
+        <item name="android:layout_marginTop">12dp</item>
+        <item name="android:textSize">@dimen/contenido</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+
+    <style name="layoutDominio">
+        <item name="android:layout_marginTop">10dp</item>
+        <item name="android:orientation">horizontal</item>
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:paddingLeft">15dp</item>
+        <item name="android:paddingRight">10dp</item>
+    </style>
+
+    <style name="textViewDominio">
+        <item name="android:layout_marginTop">12dp</item>
+        <item name="android:textSize">@dimen/contenido</item>
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:gravity">right</item>
+    </style>
+
+    <style name="radioButton">
+        <item name="android:layout_weight">0.5</item>
+        <item name="android:textSize">18dp</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+
+
+    <style name="botonDatosEmpresa">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:width">100dp</item>
+        <item name="android:enabled">false</item>
+    </style>
+
+    <style name="layoutDatosEmpresa">
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginTop">20dp</item>
+        <item name="android:orientation">horizontal</item>
+    </style>
+
 
     <style name="TituloActivity">
         <item name="android:layout_width">wrap_content</item>
@@ -38,5 +118,45 @@
         <item name="android:layout_height">match_parent</item>
         <item name="android:gravity">bottom</item>
     </style>
+
+    <style name="resultadosElementoDerecha">
+        <item name="android:layout_weight">1</item>
+        <item name="android:textSize">18dp</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:gravity">right</item>
+    </style>
+
+    <style name="botonEstrecho">
+        <item name="android:layout_marginTop">10dp</item>
+        <item name="android:layout_weight">0.5</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_gravity">bottom</item>
+    </style>
+
+    <style name="botonInferior">
+        <item name="android:layout_marginTop">5dp</item>
+        <item name="android:layout_marginLeft">20dp</item>
+        <item name="android:layout_marginRight">20dp</item>
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_gravity">center</item>
+    </style>
+
+    <style name="textoOcultoResultados">
+        <item name="android:textSize">@dimen/contenido</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:visibility">gone</item>
+    </style>
+
+    <style name="tituloSecundario">
+        <item name="android:textSize">@dimen/tit_secundario</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
 
 </resources>

@@ -18,7 +18,6 @@ import android.widget.Spinner;
 import android.widget.Toast;
 
 import com.ecoparque.R;
-import com.ecoparque.asyncTasks.ParseWebTask;
 import com.ecoparque.fragments.DesconectarFragment;
 import com.ecoparque.objects.NetInfo;
 import com.ecoparque.objects.Validador;
@@ -26,9 +25,9 @@ import com.ecoparque.objects.Validador;
 public class DatosEmpresa extends Activity implements AdapterView.OnItemSelectedListener {
     private EditText nif, tlf, mail, url, nombre;
     private Button btnTlf, btnMail, btnUrl, btnSiguiente, btnInfoDom;
-    private Validador validador = new Validador();
+    private final Validador validador = new Validador();
     private String browserUrl;
-    NetInfo netInfo = new NetInfo(DatosEmpresa.this);
+    private final NetInfo netInfo = new NetInfo(DatosEmpresa.this);
 
 
     @Override
@@ -36,44 +35,32 @@ public class DatosEmpresa extends Activity implements AdapterView.OnItemSelected
         super.onCreate(savedInstanceState);
         setContentView(R.layout.fragment_datos_empresa);
 
-        Spinner spinner = (Spinner) findViewById(R.id.areas_empresa);
-
-        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this,
-                R.array.areas_empresa, android.R.layout.simple_spinner_item);
-
-        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-
-        spinner.setAdapter(adapter);
-        spinner.setOnItemSelectedListener(this);
-
         Intent intent = getIntent();
         String message = intent.getStringExtra(SeleccionUsuario.EXTRA_MESSAGE);
+
+        Spinner spinner = (Spinner) findViewById(R.id.areas_empresa);
+        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this,
+                R.array.areas_empresa, android.R.layout.simple_spinner_item);
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        spinner.setAdapter(adapter);
+        spinner.setOnItemSelectedListener(this);
 
         nif = (EditText) findViewById(R.id.empr_cif);
         nif.setText(message);
 
         nombre = (EditText) findViewById(R.id.empr_nombre);
-
-        tlf = (EditText) findViewById(R.id.empr_tlf);
-
-        mail = (EditText) findViewById(R.id.empr_mail);
-
-        url = (EditText) findViewById(R.id.empr_url);
-
-
-        btnTlf = (Button) findViewById(R.id.btn_llamar);
-        btnMail = (Button) findViewById(R.id.btn_enviar);
-        btnUrl = (Button) findViewById(R.id.btn_abrir);
-
-        btnSiguiente = (Button) findViewById(R.id.btn_siguiente);
-        btnInfoDom = (Button) findViewById(R.id.btn_info_dominio);
-
-        tlf.addTextChangedListener(mTextEditorWatcher);
-        mail.addTextChangedListener(mTextEditorWatcher);
-        url.addTextChangedListener(mTextEditorWatcher);
         nombre.addTextChangedListener(mTextEditorWatcher);
 
+        tlf = (EditText) findViewById(R.id.empr_tlf);
+        tlf.addTextChangedListener(mTextEditorWatcher);
 
+        mail = (EditText) findViewById(R.id.empr_mail);
+        mail.addTextChangedListener(mTextEditorWatcher);
+
+        url = (EditText) findViewById(R.id.empr_url);
+        url.addTextChangedListener(mTextEditorWatcher);
+
+        btnTlf = (Button) findViewById(R.id.btn_llamar);
         btnTlf.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -85,7 +72,7 @@ public class DatosEmpresa extends Activity implements AdapterView.OnItemSelected
             }
         });
 
-
+        btnMail = (Button) findViewById(R.id.btn_enviar);
         btnMail.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -101,7 +88,7 @@ public class DatosEmpresa extends Activity implements AdapterView.OnItemSelected
             }
         });
 
-
+        btnUrl = (Button) findViewById(R.id.btn_abrir);
         btnUrl.setOnClickListener(new View.OnClickListener() {
             @Override
 
@@ -117,6 +104,7 @@ public class DatosEmpresa extends Activity implements AdapterView.OnItemSelected
             }
         });
 
+        btnInfoDom = (Button) findViewById(R.id.btn_info_dominio);
         btnInfoDom.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -132,7 +120,7 @@ public class DatosEmpresa extends Activity implements AdapterView.OnItemSelected
 
 
         );
-
+        btnSiguiente = (Button) findViewById(R.id.btn_siguiente);
         btnSiguiente.setOnClickListener(new View.OnClickListener()
 
         {

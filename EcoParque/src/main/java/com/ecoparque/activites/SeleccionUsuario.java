@@ -65,7 +65,7 @@ public class SeleccionUsuario extends Activity {
                     textView.setVisibility(View.VISIBLE);
 
                     editTextIdent.setText("");
-                    editTextIdent.setHint("NIF");
+                    editTextIdent.setHint(R.string.NIF);
                     //OCULTAR CIF
                     TextView textView1 = (TextView) findViewById(R.id.text_CIF);
                     textView1.setVisibility(View.GONE);
@@ -80,7 +80,7 @@ public class SeleccionUsuario extends Activity {
                     TextView textView = (TextView) findViewById(R.id.text_CIF);
                     textView.setVisibility(View.VISIBLE);
                     editTextIdent.setText("");
-                    editTextIdent.setHint("CIF");
+                    editTextIdent.setHint(R.string.CIF);
                     //OCULTAR NIF
                     TextView textView1 = (TextView) findViewById(R.id.text_NIF);
                     textView1.setVisibility(View.GONE);

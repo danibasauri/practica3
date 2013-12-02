@@ -19,10 +19,7 @@ public class Validador {
         } else if (input.length() == 9) {
             try {
                 Integer.parseInt(input.substring(0, 8));
-                if (input.substring(8, 9).matches("\\p{L}") || input.substring(8, 9).matches("\\p{Lu}"))
-                    return true;
-                else
-                    return false;
+                return input.substring(8, 9).matches("\\p{L}") || input.substring(8, 9).matches("\\p{Lu}");
             } catch (NumberFormatException e) {
                 return false;
             }

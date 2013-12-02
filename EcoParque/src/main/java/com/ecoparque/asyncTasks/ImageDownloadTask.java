@@ -25,14 +25,14 @@ import java.util.WeakHashMap;
 
 public class ImageDownloadTask extends AsyncTask<String, Void, Bitmap> {
 
-    FileCache fileCache;
-    MemoryCache memoryCache = new MemoryCache();
-    private Map<ImageView, String> imageViews = Collections.synchronizedMap(new WeakHashMap<ImageView, String>());
-    private int mPosition;
-    private LazyAdapter.ViewHolder mHolder;
-    final int stub_id = R.drawable.ic_launcher;
-    private String mUrl;
-    private Activity mActivity;
+    private final FileCache fileCache;
+    private final MemoryCache memoryCache = new MemoryCache();
+    private final Map<ImageView, String> imageViews = Collections.synchronizedMap(new WeakHashMap<ImageView, String>());
+    private final int mPosition;
+    private final LazyAdapter.ViewHolder mHolder;
+    private final int stub_id = R.drawable.ic_launcher;
+    private final String mUrl;
+    private final Activity mActivity;
 
 
     public ImageDownloadTask(String url, Activity activity, int position, LazyAdapter.ViewHolder holder) {
@@ -75,8 +75,6 @@ public class ImageDownloadTask extends AsyncTask<String, Void, Bitmap> {
         NetInfo netInfo = new NetInfo(mActivity);
         if (netInfo.isConnected()) {
             try {
-
-
                 bitmap = null;
                 URL imageUrl = new URL(url);
                 HttpURLConnection conn = (HttpURLConnection) imageUrl.openConnection();
@@ -104,9 +102,7 @@ public class ImageDownloadTask extends AsyncTask<String, Void, Bitmap> {
 
     boolean imageViewReused(String url, ImageView imgView) {
         String tag = imageViews.get(imgView);
-        if (tag == null || !tag.equals(url))
-            return true;
-        return false;
+        return tag == null || !tag.equals(url);
     }
 
     @Override
@@ -127,13 +123,6 @@ public class ImageDownloadTask extends AsyncTask<String, Void, Bitmap> {
 
 
     }
-
-    //Por si se quiere probar la carga de imágenes sin tenerlas en cache
-    public void clearCache() {
-        memoryCache.clear();
-        fileCache.clear();
-    }
-
 }
 
 

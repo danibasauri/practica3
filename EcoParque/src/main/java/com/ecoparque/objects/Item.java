@@ -8,20 +8,13 @@ public class Item {
         return Url;
     }
 
-    public void setUrl(String url) {
-        Url = url;
-    }
-
     public String getName() {
         return Name;
     }
 
-    public void setName(String name) {
-        Name = name;
-    }
 
-    public String Url;
-    public String Name;
+    private final String Url;
+    private final String Name;
 
     public Item(String name, String url) {
         Url = url;
